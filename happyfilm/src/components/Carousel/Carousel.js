@@ -12,26 +12,26 @@ export default class Carousel extends Component {
                     </ol>
                     <div className="carousel-inner" role="listbox">
                         <div className="carousel-item active">
-                            <img src="./img/1.jpg" alt="First slide" width="100%" height={500} />
+                            <img src="./img/slide_1.jpg" alt="First slide" width="100%" height={600} />
                             <div className="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="./img/1.jpg" alt="First slide" width="100%" height={500} />
+                            <img src="./img/slide_2.jpg" alt="First slide" width="100%" height={600} />
                             <div className="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="./img/1.jpg" alt="First slide" width="100%" height={500} />
+                            <img src="./img/slide_3.jpg" alt="First slide" width="100%" height={600} />
                             <div className="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                     </div>
-                    <a className="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                    <a className="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true" />
                         <span className="sr-only">Previous</span>
                     </a>
-                    <a className="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                    <a className="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                         <span className="carousel-control-next-icon" aria-hidden="true" />
                         <span className="sr-only">Next</span>
                     </a>
