@@ -1,14 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Carousel from './components/Carousel/Carousel';
+import Promotion from './components/Promotion/promotion';
+import News from './components/News/news';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+     
         <Carousel />
-      </header>
+        <Promotion/>
+        <News/>
+     
+        
+      
     </div>
   );
 }
