@@ -9,13 +9,14 @@ import Footer from "./components/footer/footer"
 function App() {
   return (
     <div className="App">
-
-
-      <Logo />
-      <Navbar />
-      <Carousel />
-      <Footer />
-
+      <header className="App-header">
+       
+          <Logo />
+          <Navbar />
+          <Carousel />
+          <Footer />
+       
+      </header>
 
     </div>
   );
