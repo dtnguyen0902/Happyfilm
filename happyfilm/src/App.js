@@ -16,10 +16,7 @@ function App() {
         <Carousel />
         <Promotion/>
         <News/>
-        <Footer/>
-     
-        
-      
+        <Footer/>  
     </div>
   );
 }
