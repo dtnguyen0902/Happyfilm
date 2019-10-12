@@ -1,0 +1,113 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+   }
+p{
+    
+    margin:0;
+
+}
+
+span:first-child{
+    color: white;
+    background-color: #FB4226;
+    margin-top: 20px;
+    padding: 15px 0;
+    line-height: 0;
+    border-radius: 10%;
+    align-items: center;
+    text-align: center;
+}
+span:last-child{
+    font-size: 15px;
+    width: 4rem;
+    padding: 10px 0;
+    color: white;
+    background-color: #343E4E;
+    margin-top: 20px;
+    margin-left: 60px;
+    text-align: center;
+    line-height: 0;
+    border-radius: 10%;
+}
+
+ .fa-star{
+     font-size: 8px;
+     margin-top: 1rem;
+ }
+.card{
+    position: relative;
+    border: none;
+    margin: 30%;
+  
+}
+.card__info{
+    position: absolute;
+    top: 1%;
+   
+}
+.card__rating{
+    display: flex;
+    padding:  10px 10px;
+}
+.card__rating > span:first-child{
+    height: 2rem;
+    width: 3rem;
+}
+
+.card__rating .stars i{
+    color: red;
+}
+.card__rating .stars i:last-child{
+    color: white;
+}
+.card__content{
+    position: relative;
+    opacity: 0;
+}
+.card-body{
+    opacity: 1;
+}
+.card__play{
+    position: absolute;
+    
+    left: 37%;
+    color: white;
+    text-align: center;
+    margin-top: 11%;
+}
+.card__play i{
+    
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    line-height: 40px;
+    border-radius: 50%;
+
+}
+.card__button{
+    color: white;
+   font-size: 20px;
+    position: absolute;
+    top: 215px;
+    width: 105%
+}
+.card__button button{
+    width: 100%;
+    font-size: 25px;
+}
+/* Hover */
+.card:hover .card__content{
+    opacity: 1;
+}
+.card:hover .card-body{
+    opacity: 0;
+}
+.card__play i{
+    transition: all 0.5s;
+}
+.card__play i:hover{
+    transform: scale(0.9);
+}
