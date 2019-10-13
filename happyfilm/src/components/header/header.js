@@ -6,16 +6,13 @@ import Login from "./login";
 
 export default class Header extends Component {
     render() {
-        return(
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <Logo/>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <Search/>
-                    <form class="form-inline my-2 my-lg-0">
-                        <Login/>
-                        <Signup/>
-                    </form>
+        return (
+            <div className="container">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+                    <Logo />
+                    <div className="row">
+                        <Login />
+                        <Signup />
                     </div>
                 </nav>
             </div>

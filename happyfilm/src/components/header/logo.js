@@ -8,21 +8,11 @@ export default class Logo extends Component {
                     <img
                         style={{ width: 60 }}
                         className="navbar-brand"
-                        src="../img/logo.png"
+                        src="../img/logo_happyfilm_nobg.png"
                         alt
                     />
                 </a>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon" />
-                </button>
+
             </div>
 
         )
