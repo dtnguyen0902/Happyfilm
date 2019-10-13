@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 export default class Search extends Component {
     render() {
         return (
-            <div>
-                <span className="fa fa-search">
+            <div className="row">
                 <input
-                    className="form-control fa fa-search"
+                    className="form-control"
                     type="search"
                     placeholder="Tìm kiếm phim"
                     aria-label="Search"
-                /></span>
+                />
             </div>
         )
     }
