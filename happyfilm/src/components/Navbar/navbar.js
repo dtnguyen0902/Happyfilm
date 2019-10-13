@@ -1,40 +1,51 @@
 import React, { Component } from "react";
+import Search from "../header/search";
 
 export default class Navbar extends Component {
     render() {
         return (
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
+            <div className="bg-dark">
+                <div className="container">
+                    <nav className="navbar navbar-expand-lg ">
+                        <ul className="container navbar-nav">
+                            <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Mua Vé <span className="sr-only">(current)</span>
+                                    MUA VÉ
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Phim
-        </a>
+                                    PHIM
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Lịch Chiếu
-        </a>
+                                    LỊCH CHIẾU
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Ưu đãi
-        </a>
+                                    RẠP/GIÁ VÉ
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Tin Tức
-        </a>
+                                    ƯU ĐÃI
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                    GÓC ĐIỆN ẢNH
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">                                  
+                                    <Search />
+                                </a>
                             </li>
                         </ul>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </div>
         )
     }
