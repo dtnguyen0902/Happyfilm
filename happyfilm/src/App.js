@@ -7,6 +7,8 @@ import News from './components/News/news';
 import Header from "./components/header/header";
 import Navbar from "./components/Navbar/navbar"
 import Footer from './components/Footer/footer';
+import ListPhim from './components/ListPhim/ListPhim';
+import Rap from './components/Rap/Rap';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Header/>
         <Navbar/>
         <Carousel />
+        <ListPhim />
+        <Rap />
         <Promotion/>
         <News/>
         <Footer/>  
