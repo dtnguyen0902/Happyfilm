@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Logo from "./logo";
-import Search from "./search";
 import Signup from "./signup";
 import Login from "./login";
 
