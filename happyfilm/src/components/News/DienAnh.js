@@ -8,9 +8,17 @@ class DienAnh extends Component {
             <div>
                 <div className="row">
                     <div className='col-6'>
+                        <a href="#">BÌNH LUẬN PHIM</a>
+                        <CommentFilm />
+                        <CommentFilm />
+                        <CommentFilm />
                         <CommentFilm />
                     </div>
                     <div className='col-6'>
+                        <a href="#">BLOG ĐIỆN ẢNH</a>
+                        <DienAnhDetail />
+                        <DienAnhDetail />
+                        <DienAnhDetail />
                         <DienAnhDetail />
                     </div>
                 </div>

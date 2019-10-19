@@ -8,11 +8,11 @@ export default class Login extends Component {
                     ĐĂNG NHẬP
                 </button>
                 {/* Modal */}
-                <div className="modal fade" id="myLogin" tabIndex={-1} role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div className="modal fade" id="myLogin" tabIndex={-1} role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable" role="document">
                         <div className="modal-content">
                             <div className="modal-header text-center">
-                                <h5 className="modal-title" id="exampleModalScrollableTitle">
+                                <h5 className="modal-title">
                                     <img src="./img/logo_happyfilm_nobg.png" alt="First slide" width="20%" height="20%" className="rounded-circle" />
                                 </h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
