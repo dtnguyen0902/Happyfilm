@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import Carousel from './components/Carousel/Carousel';
 import Promotion from './components/Promotion/promotion';
 import News from './components/News/news';
 import Header from "./components/header/header";
 import Navbar from "./components/Navbar/navbar"
-import Footer from './components/Footer/footer';
 import ListPhim from './components/ListPhim/ListPhim';
 import Rap from './components/Rap/Rap';
+import ManagerFooter from './components/Footer/ManagerFooter';
+import Sticker from './components/IconSticker.js/Sticker';
 
 function App() {
   return (
@@ -17,10 +17,11 @@ function App() {
         <Navbar/>
         <Carousel />
         <ListPhim />
+        <Sticker />
         <Rap />
         <Promotion/>
         <News/>
-        <Footer/>  
+        <ManagerFooter />
     </div>
   );
 }

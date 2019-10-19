@@ -9,7 +9,6 @@ export default class Logo extends Component {
                         style={{ width: 60 }}
                         className="navbar-brand"
                         src="../img/logo_happyfilm_nobg.png"
-                        alt
                     />
                 </a>
 
