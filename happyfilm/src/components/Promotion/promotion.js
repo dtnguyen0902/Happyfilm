@@ -22,16 +22,16 @@ class Promotion extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-12 col-md-3">
+                        <div className="col-3">
                             <img src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" data-src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" class="lazy loaded" data-was-processed="true" />
                         </div>
-                        <div className="col-12 col-md-3">
+                        <div className="col-3">
                             <img src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" data-src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" class="lazy loaded" data-was-processed="true" />
                         </div>
-                        <div className="col-12 col-md-3">
+                        <div className="col-3">
                             <img src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" data-src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" class="lazy loaded" data-was-processed="true" />
                         </div>
-                        <div className="col-12 col-md-3">
+                        <div className="col-3">
                             <img src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" data-src="https://galaxycine.vn/media/2019/9/30/300x450-1560498889489-1569464458710_1569829520993.jpg" class="lazy loaded" data-was-processed="true" />
                         </div>
                     </div>
