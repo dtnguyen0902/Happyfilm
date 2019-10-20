@@ -15,9 +15,6 @@ export default class Login extends Component {
                                 <h5 className="modal-title">
                                     <img src="./img/logo_happyfilm_nobg.png" alt="First slide" width="20%" height="20%" className="rounded-circle" />
                                 </h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"><i className="fa fa-times" aria-hidden="true"></i></span>
-                                </button>
                             </div>
                             <div className="container">
                                 <div className="modal-body">
