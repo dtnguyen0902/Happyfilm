@@ -1,0 +1,30 @@
+@import "../../Helper/variable";
+
+.mynavBg{
+    background-color: $color-grey; 
+}
+ul li a{
+    color: $color-mint;
+    padding: 0 $pd-3;
+    border-left: $bd-1 solid $color-mint;
+    justify-content: space-between;
+}
+.myNav__ul a{
+    padding: 0;
+    text-align: center;
+}
+.myNav{
+    padding: 0 $pd-4;
+}
+.myNav .myNav__ul .myNav__link {
+    padding-left: $pd-4;
+    margin-bottom: $mg-1;
+    line-height: $line-height-0;
+}
+.gocDienAnh__ul{
+    display: none;
+    &::after{
+        display: block;
+        list-style: none;
+    }
+}

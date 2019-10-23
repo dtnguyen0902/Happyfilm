@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 // variable color
 $color-black: #0B0C10; // default
 $color-grey: #1F2833;
@@ -7,32 +8,37 @@ $color-lightgreen:#45A29E;
 
 
 // variable font-size
-$fs-0: 15px; //default
-$fs-1: 13px;
+$fs-0: 10px; //default
+$fs-1: 15px;
 $fs-2: 20px;
-$fs-3: 24px;
+$fs-3: 30px;
 //Còn 1 font-size: 36px;
 $fs-4: 40px;
-$fs-5: 32px;
+$fs-5: 60px;
 
 //variable margin
-$mg-0: 2px;
+$mg-0: 0px;
+$mg-05: 5px;
 $mg-1: 10px;
 $mg-2: 25px;
 $mg-3: 30px;
 
+//border
+$bd-0: none;
+$bd-1: 1px;
 //variable border-radius
-$border-radius: 2px;
+$border-radius: 10px;
 
 //variable padding
-$pd-0: 5px; //default
-$pd-1: 10px;
-$pd-2: 15px;
-$pd-3: 20px;
+$pd-0: 0px; //default
+$pd-1: 5px;
+$pd-2: 10px;
+$pd-3: 15px;
+$pd-4: 40px;
 
 
 //variable line-height
-$line-height-0: 1.43; //default
+$line-height-0: 2; //default
 
 
 //variable font-weight
@@ -56,3 +62,4 @@ $breakpoints:(
     'small' : 576px,
     'screen-0': 1440px
 )
+//font

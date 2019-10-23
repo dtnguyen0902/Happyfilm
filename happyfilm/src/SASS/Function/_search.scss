@@ -1,0 +1,11 @@
+@import '../Helper/variable';
+.mySearch{
+    height: 30px;
+    border-radius: $border-radius;
+    border: $bd-1 solid $color-black;
+    &:focus{
+        outline: none;
+        box-shadow: none;
+        border: $bd-1 solid $color-mint;
+    }
+}

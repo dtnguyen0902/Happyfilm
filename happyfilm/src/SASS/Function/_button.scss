@@ -1,0 +1,18 @@
+@import "../Helper/variable";
+
+.myButton {
+    background-color: $color-grey;
+    color: $color-mint;
+    outline: none;
+    border-color: $color-mint;
+    margin: 0 $mg-05;
+    padding: $pd-1;
+    font-size: $fs-1;
+    &:hover{
+        font-size: $fs-2;
+        transition: .5s;
+    }
+    &:focus{
+        outline: none;
+    }
+}
