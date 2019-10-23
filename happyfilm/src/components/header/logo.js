@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _header from "../../SASS/Components/Header/_header.scss";
 
 export default class Logo extends Component {
     render() {
@@ -7,12 +8,12 @@ export default class Logo extends Component {
                 <div>
                     <a className="navbar-brand" href="#">
                         <img
-                            style={{ width: 40 }} className="navbar-brand" src="../img/logo_happyfilm_nobg.png"
+                            className="headerImg navbar-brand" src="../img/logo_happyfilm_nobg.png"
                         />
                     </a>
                 </div>
                 <div>
-                    <h3>HAPPY FILM</h3>
+                    <h3 className='happyfilm'>Happy Film</h3>
                 </div>
 
             </div>

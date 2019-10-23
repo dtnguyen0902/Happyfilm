@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import _button from '../../SASS/Function/_button.scss';
 export default class Login extends Component {
     render() {
         return (
             <div>
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myLogin">
+                <button type="button" className="myButton" data-toggle="modal" data-target="#myLogin">
                     ĐĂNG NHẬP
                 </button>
                 {/* Modal */}

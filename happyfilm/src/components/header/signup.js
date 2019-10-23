@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import _button from '../../SASS/Function/_button.scss';
 export default class Signup extends Component {
     render() {
         return (
             <div>
                 {/* Button trigger modal */}
-                <button type="button" className="btn btn-info" data-toggle="modal" data-target="#mySignUp">
+                <button type="button" className="myButton" data-toggle="modal" data-target="#mySignUp">
                     ĐĂNG KÝ
                 </button>
                 {/* Modal */}
