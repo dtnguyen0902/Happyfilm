@@ -12,17 +12,17 @@ export default class Carousel extends Component {
                     </ol>
                     <div className="carousel-inner" role="listbox">
                         <div className="carousel-item active">
-                            <img src="./img/slide_1.jpg" alt="First slide" width="100%" height={600} />
+                            <img src="./img/banner.jpg" alt="First slide" width="100%" height={600} />
                             <div className="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="./img/slide_2.jpg" alt="First slide" width="100%" height={600} />
+                            <img src="./img/banner.jpg" alt="First slide" width="100%" height={600} />
                             <div className="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="./img/slide_3.jpg" alt="First slide" width="100%" height={600} />
+                            <img src="./img/banner.jpg" alt="First slide" width="100%" height={600} />
                             <div className="carousel-caption d-none d-md-block">
                             </div>
                         </div>
