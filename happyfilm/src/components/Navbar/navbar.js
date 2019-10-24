@@ -8,7 +8,7 @@ export default class Navbar extends Component {
             <div className="mynavBg">
                 <nav className="myNav navbar navbar-expand ">
                     <ul className="myNav__ul container navbar-nav">
-                        <li className="nav-item">
+                        <li className="myNav__li nav-item">
                             <a className="myNav__link nav-link" href="#">
                                 MUA VÉ
                                 </a>

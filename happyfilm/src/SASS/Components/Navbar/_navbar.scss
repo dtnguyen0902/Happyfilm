@@ -3,23 +3,30 @@
 .mynavBg{
     background-color: $color-grey; 
 }
-ul li a{
-    color: $color-mint;
-    padding: 0 $pd-3;
+ul li {
+    content: '';
+    padding: $pd-0 $pd-3;
     border-left: $bd-1 solid $color-mint;
     justify-content: space-between;
+    &:hover{
+        border-bottom:  $bd-1 solid $color-mint;
+    }
 }
-.myNav__ul a{
-    padding: 0;
-    text-align: center;
+ul li a{
+    margin: $mg-0;
+    color: $color-mint;
+    &:hover{
+        color: $color-mint;
+    }
 }
-.myNav{
-    padding: 0 $pd-4;
+
+.myNav__link{
+    padding: $pd-0;
 }
+
 .myNav .myNav__ul .myNav__link {
-    padding-left: $pd-4;
-    margin-bottom: $mg-1;
     line-height: $line-height-0;
+    font-weight: $fw-bold-0 ;
 }
 .gocDienAnh__ul{
     display: none;

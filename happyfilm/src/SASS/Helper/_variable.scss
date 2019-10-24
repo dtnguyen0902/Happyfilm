@@ -5,6 +5,7 @@ $color-grey: #1F2833;
 $color-gray :  #C5C6C7;
 $color-mint : #66FCF1;
 $color-lightgreen:#45A29E;
+$color-white: white;
 
 
 // variable font-size
@@ -33,7 +34,7 @@ $border-radius: 10px;
 $pd-0: 0px; //default
 $pd-1: 5px;
 $pd-2: 10px;
-$pd-3: 15px;
+$pd-3: 30px;
 $pd-4: 40px;
 
 
@@ -43,7 +44,7 @@ $line-height-0: 2; //default
 
 //variable font-weight
 $fw-normal: normal;
-$fw-bold-0: 600;
+$fw-bold-0: 400;
 $fw-bold-1: 700;
 $fw-bold: bold;
 
