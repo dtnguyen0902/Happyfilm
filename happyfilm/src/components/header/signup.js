@@ -16,9 +16,6 @@ export default class Signup extends Component {
                                 <h5 className="modal-title" id="exampleModalScrollableTitle">
                                     <img src="./img/logo_happyfilm_nobg.png" alt="First slide" width="20%" height="20%" className="rounded-circle" />
                                 </h5>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"><i className="fa fa-times" aria-hidden="true"></i></span>
-                                </button>
                             </div>
                             <div className="modal-body">
                                 <div class="container">
@@ -28,7 +25,6 @@ export default class Signup extends Component {
                                                 <input type="text" className="form-control" placeholder="Tài Khoản" aria-describedby="basic-addon1" />
                                             </div>
                                         </div>
-
                                         <div className="row">
                                             <div className="col-6">
                                                 <div className="form-group">
@@ -85,7 +81,6 @@ export default class Signup extends Component {
                             <div className="modal-footer">
                                 <button type="button" class="btn btn-warning container">ĐĂNG KÝ</button>
                             </div>
-
                         </div>
                     </div>
                 </div>

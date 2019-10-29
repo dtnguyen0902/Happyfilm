@@ -5,7 +5,7 @@ import DienAnhDetail from './DienAnhDetail';
 class DienAnh extends Component {
     render() {
         return (
-            <div>
+            <div className='container'>
                 <div className="row">
                     <div className='col-6'>
                         <a href="#">BÌNH LUẬN PHIM</a>
