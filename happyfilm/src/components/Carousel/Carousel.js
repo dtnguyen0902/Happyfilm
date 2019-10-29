@@ -1,42 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-export default class Carousel extends Component {
+class Carousel extends Component {
+
     render() {
+        let { carousel } = this.props;
         return (
-            <div>
-                <div id="myCarousel" className="myCarousel carousel slide" data-ride="carousel">
-                    <ol className="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to={0} className="active" />
-                        <li data-target="#myCarousel" data-slide-to={1} />
-                        <li data-target="#myCarousel" data-slide-to={2} />
-                    </ol>
-                    <div className="carousel-inner" role="listbox">
-                        <div className="carousel-item active">
-                            <img src="./img/banner.jpg" alt="First slide" width="100%" height={600} />
-                            <div className="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="./img/banner.jpg" alt="First slide" width="100%" height={600} />
-                            <div className="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="./img/banner.jpg" alt="First slide" width="100%" height={600} />
-                            <div className="carousel-caption d-none d-md-block">
-                            </div>
-                        </div>
-                    </div>
-                    <a className="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true" />
-                        <span className="sr-only">Previous</span>
-                    </a>
-                    <a className="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true" />
-                        <span className="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        )
+            <div className="w-100" href={carousel.maPhim}>
+                <img src="./img/haloween.jpg"/>
+            </div> 
+        );
     }
 }
+
+export default Carousel;

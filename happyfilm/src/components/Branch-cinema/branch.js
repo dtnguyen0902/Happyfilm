@@ -5,8 +5,7 @@ import Location from "./location"
 export default class Branch extends Component {
     render() {
         return (
-         
-                <div>
+                <div className='container'>
                     <ul className="nav nav-tabs" id="myTabBranch" role="tablist">
                         <li className="nav-item">
                             <a

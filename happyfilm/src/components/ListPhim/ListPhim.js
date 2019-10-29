@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import PhimItems from './PhimItems';
 import MoreInfoFilm from './MoreInfoFilm';
+import Axios from 'axios';
+import * as action from '../../redux/action/Action';
+import { connect } from "react-redux";
+
 class ListPhim extends Component {
+    renderSource = () => {
+        let { ListFilms } = this.props;
+        return ListFilms.map((item, index) => {
+            if (index < 8) {
+                return (
+                    <PhimItems key={index} movie={item} />
+                )
+            }
+        })
+    }
+    componentDidMount() {
+        this.props.layDuLieu();
+    }
     render() {
         return (
             <div className="container">
@@ -15,10 +32,14 @@ class ListPhim extends Component {
                 </ul>
                 <div className="tab-content" id="pills-tabContent">
                     <div className="tab-pane fade show active" id="phimDangChieu" role="tabpanel" aria-labelledby="pills-home-tab">
-                        <PhimItems />
+                        <div className='row'>
+                            {this.renderSource()}
+                        </div>
                     </div>
                     <div className="tab-pane fade" id="phimSapChieu" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <PhimItems />
+                        <div className='row'>
+                            {this.renderSource()}
+                        </div>
                     </div>
                 </div>
                 <MoreInfoFilm className="d-flex justify-content-end" />
@@ -27,4 +48,17 @@ class ListPhim extends Component {
     }
 }
 
-export default ListPhim;
+const mapDispatchToProps = dispatch => {
+    return {
+        layDuLieu: () => {
+            dispatch(action.actOnListMovieAPI())
+        }
+    }
+}
+const mapStateToProps = state => {
+    return {
+        ListFilms: state.movieReducer.ListFilms
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListPhim);

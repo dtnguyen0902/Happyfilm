@@ -1,0 +1,29 @@
+@import '../../Helper/variable';
+
+.myPhim{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+}
+.myPhim__Name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  
+    letter-spacing: 4;
+    font-size: $fs-2;
+    font-weight: 500;
+    font-family: 'PT Serif', serif;
+}
+.myPhim_moTa{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  
+}
+.myCard {
+    color: $color-black;
+    
+}

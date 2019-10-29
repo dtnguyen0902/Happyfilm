@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import userReducer from './userReducer';
+import movieReducer from './movieReducer';
+import ThongTinrapReducer from './ThongTinrapReducer';
+import lichChieuReducer from './lichChieuReducer';
 const rootReducers = combineReducers(
     {
-        userReducer
+        movieReducer,
+        ThongTinrapReducer,
+        lichChieuReducer
     }
 )
 export default rootReducers;

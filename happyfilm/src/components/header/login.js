@@ -37,7 +37,7 @@ export default class Login extends Component {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text fa fa-unlock-alt" id="basic-addon1"></span>
                                                 </div>
-                                                <input type="text" className="form-control" placeholder="Mật Khẩu" aria-describedby="basic-addon1" />
+                                                <input type="password" className="form-control" placeholder="Mật Khẩu" aria-describedby="basic-addon1" />
                                             </div>
                                         </div>
                                     </div>
