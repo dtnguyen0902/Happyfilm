@@ -14,7 +14,6 @@ const actOnListMovieAPI = () => {
             url: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01"
         })
             .then(result => {
-                console.log(result)
                 dispatch(layDuLieu(result.data))
             })
             .catch(error => {
@@ -22,29 +21,41 @@ const actOnListMovieAPI = () => {
             })
     }
 }
+const actDetailMovieAPI = id => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
+        })
+            .then(result => {
+                console.log(result.data)
+                dispatch({
+                    type: ActionType.LAY_CHI_TIET_PHIM,
+                    movie: result.data
+                })
+            })
+    }
+}
 
 const layThongTinrap = ListRap => {
     return {
-        type: ActionType.LAY_THONG_TIN_RAP,
+        type: ActionType.LAY_DATA_RAP,
         ListRap
     }
 }
-const layThongTinLichChieu = ListLichChieu => {
-    return {
-        type: ActionType.LAY_THONG_TIN_LICH_CHIEU,
-        ListLichChieu
+const actListRapAPI = () => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
+        })
+            .then(result => {
+                dispatch(layThongTinrap(result.data))
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
-const layMaRap = CumRap => {
-    return {
-        type: ActionType.LAY_MA_RAP,
-        CumRap
-    }
-}
-const layDsPhim = danhSachPhim => {
-    return {
-        type: ActionType.LAY_DS_PHIM,
-        danhSachPhim
-    }
-}
-export { layDuLieu, layThongTinrap, layThongTinLichChieu, layMaRap, layDsPhim, actOnListMovieAPI }
+
+export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI }
