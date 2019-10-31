@@ -12,16 +12,7 @@ class FormRap extends Component {
         })
     }
     componentDidMount() {
-        Axios({
-            method: "GET",
-            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
-        })
-            .then(result => {
-                this.props.layThongTinrap(result.data)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        this.props.layThongTinrap()
     }
     render() {
         return (
@@ -36,8 +27,8 @@ class FormRap extends Component {
 }
 const mapDispatchToProps = dispatch => {
     return {
-        layThongTinrap: ListRap => {
-            dispatch(action.layThongTinrap(ListRap))
+        layThongTinrap: () => {
+            dispatch(action.actListRapAPI())
         }
     }
 }

@@ -5,7 +5,7 @@ let initState = {
 }
 const ThongTinrapReducer = (state = initState, action) => {
     switch (action.type) {
-        case ActionType.LAY_THONG_TIN_RAP:
+        case ActionType.LAY_DATA_RAP:
             let ListRaps  = action.ListRap;
             return { ListRaps }
         default:
