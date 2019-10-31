@@ -9,6 +9,7 @@ class ListPhim extends Component {
     renderSource = () => {
         let { ListFilms } = this.props;
         return ListFilms.map((item, index) => {
+            console.log(item)
             if (index < 8) {
                 return (
                     <PhimItems key={index} movie={item} />

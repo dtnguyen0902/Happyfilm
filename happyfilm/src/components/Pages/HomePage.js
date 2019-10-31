@@ -13,8 +13,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <Header />
-                <Navbar />
+
                 <ListCarousel />
                 <ListPhim />
                 <Sticker />

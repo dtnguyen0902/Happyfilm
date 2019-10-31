@@ -21,6 +21,21 @@ const actOnListMovieAPI = () => {
             })
     }
 }
+const actDetailMovieAPI = id => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
+        })
+            .then(result => {
+                console.log(result.data)
+                dispatch({
+                    type: ActionType.LAY_CHI_TIET_PHIM,
+                    movie: result.data
+                })
+            })
+    }
+}
 
 const layThongTinrap = ListRap => {
     return {
@@ -35,7 +50,6 @@ const actListRapAPI = () => {
             url: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
         })
             .then(result => {
-                console.log(result)
                 dispatch(layThongTinrap(result.data))
             })
             .catch(error => {
@@ -44,4 +58,4 @@ const actListRapAPI = () => {
     }
 }
 
-export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI }
+export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI }
