@@ -19,7 +19,7 @@ class PhimItems extends Component {
             <div className="card__button">
               <div className='row'>
                 <div className='col-6'>
-                  <NavLink type='button' className='btn btn-info' to={`/chi-tiet-phim/${movie.maPhim}`}>Xem chi tiết</NavLink>
+                  <NavLink className='btn btn-info' to={`/chi-tiet-phim/${movie.maPhim}`}>Xem chi tiết</NavLink>
                 </div>
                 <div className='col-6'>
                   <button type="button" className="btn btn-danger btn-block">Mua Vé</button>

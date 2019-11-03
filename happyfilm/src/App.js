@@ -6,6 +6,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { routerHome } from './router'
 import Header from './components/header/header';
 import Navbar from './components/Navbar/navbar';
+import ManagerFooter from './components/Footer/ManagerFooter';
+import ListCarousel from './components/Carousel/ListCarousel';
+
 
 
 function App() {
@@ -20,11 +23,13 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <div>
-      <Header />
-      <Navbar />
+      <Route>
+        <Header />
+        <Navbar />
+        <ListCarousel />
         <Switch>{showMenuHome(routerHome)}</Switch>
-      </div>
+        <ManagerFooter />
+      </Route>
     </BrowserRouter>
   );
 }

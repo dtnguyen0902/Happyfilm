@@ -7,6 +7,12 @@ const layDuLieu = ListFilm => {
         ListFilm
     }
 }
+const layThongTinrap = ListRap => {
+    return {
+        type: ActionType.LAY_DATA_RAP,
+        ListRap
+    }
+}
 const actOnListMovieAPI = () => {
     return dispatch => {
         Axios({
@@ -34,15 +40,13 @@ const actDetailMovieAPI = id => {
                     movie: result.data
                 })
             })
+            .catch(err => {
+                console.log(err)
+            })
     }
 }
 
-const layThongTinrap = ListRap => {
-    return {
-        type: ActionType.LAY_DATA_RAP,
-        ListRap
-    }
-}
+
 const actListRapAPI = () => {
     return dispatch => {
         Axios({
@@ -57,5 +61,41 @@ const actListRapAPI = () => {
             })
     }
 }
+const actLichChieuRapAPI = (id) => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${id}&maNhom=GP01`
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_LICH_CHIEU_RAP,
+                    Cinema: result.data
+                }
+                )
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
 
-export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI }
+const actListRapHeThongAPI = id => {
+    return dispatch => {
+        Axios({
+            method: 'GET',
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${id}`
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_CHI_TIET_RAP,
+                    ListCinemas: result.data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+
+export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI }
