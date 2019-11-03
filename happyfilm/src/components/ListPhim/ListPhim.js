@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PhimItems from './PhimItems';
 import MoreInfoFilm from './MoreInfoFilm';
-import Axios from 'axios';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 
@@ -9,7 +8,6 @@ class ListPhim extends Component {
     renderSource = () => {
         let { ListFilms } = this.props;
         return ListFilms.map((item, index) => {
-            console.log(item)
             if (index < 8) {
                 return (
                     <PhimItems key={index} movie={item} />
