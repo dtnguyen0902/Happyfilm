@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Logo from "./logo";
 import Signup from "./signup";
-import Login from "./login";
 import _header from "../../SASS/Components/Header/_header.scss"
+import Login from './login';
 
 export default class Header extends Component {
     render() {

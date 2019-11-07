@@ -1,63 +1,77 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
-import queryString from 'query-string';
+import ListCarousel from '../Carousel/ListCarousel';
+import Branch from '../Branch-cinema/branch';
+import ListPhim from '../ListPhim/ListPhim';
+import Promotion from '../Promotion/promotion';
+import DienAnh from '../News/DienAnh';
+import LocationCinema from './LocationCinema';
+import _phimitems from '../../SASS/Components/Listphim/_phimitems.scss';
 
-
-class LocationCinema extends Component {
+class LichChieuCinema extends Component {
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.match.params.id !== this.props.match.params.id) {
+            this.props.detailCinema(nextProps.match.params.id)
+        }
+    }
     componentDidMount() {
         let id = this.props.match.params.id;
-        console.log(this.props)
         this.props.detailCinema(id);
-        
+        console.log(this.props.history)
     }
     renderCinema = () => {
         return this.props.Cinema.map((item, index) => {
             return (
-                <tr key={index}>
-                    <td>
-                        {item.tenHeThongRap}
-                    </td>
-                    <td>
+                <Fragment key={index}>
+                    <Fragment className="card bg-dark container">
                         {item.lstCumRap.map((item, index) => {
                             return (
-                                <tr key={index}>
-                                    <td>{item.danhSachPhim.map((item, index) => {
-                                        return (
-                                            <tr key={index}>
-                                                <td>{item.tenCumRap}</td>
-                                                <td>{item.diaChi}</td>
-                                                <td>
-                                                    {item.lstLichChieuTheoPhim.map((item, index2) => {
-                                                        
-                                                        return (
-                                                            <tr key={index2}>
-                                                                <td>{item.tenRap}</td>
-                                                                <td>{item.giaVe}</td>
-                                                                <td>{new Date(item.ngayChieuGioChieu).toLocaleDateString()}</td>
-                                                                <td>{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</td>
-                                                            </tr>
-                                                        )
-                                                    })}
-                                                </td>
-                                            </tr>
-                                        )
-                                    })}
-                                    </td>
-                                </tr>
+                                <Fragment key={index}>
+                                    <div className='row'>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{item.tenCumRap}</h5>
+                                            <p className="card-text">{item.diaChi}</p>
+                                        </div>
+                                        <div>{item.danhSachPhim.map((item, index) => {
+                                            return (
+                                                <div className='col-sm-12' key={index}>
+                                                    <div className="card-body">
+                                                        <h5 className="card-title">{item.tenPhim}</h5>
+                                                    </div>
+                                                    <div className='row mx-0 px-0 myCinema'>
+                                                        {item.lstLichChieuTheoPhim.map((item, index) => {
+                                                            return (
+                                                                <div className="card bg-dark myCinema" style={{ width: '8' }} key={index}>
+                                                                    <div className="card-body px-2 py-2">
+                                                                        <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
+                                                                        <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
+                                                                    </div>
+                                                                </div>
+                                                                // <div></div>
+                                                            )
+                                                        })}
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+                                        </div>
+                                    </div>
+                                </Fragment>
                             )
                         })}
-                    </td>
-                </tr>
+                    </Fragment>
+                </Fragment>
             )
         })
     }
-
     render() {
         return (
-            <div>
-                {this.renderCinema()}
+            <div className='myCinema'>
+                <Branch />
+                <div className='container'>
+                    {this.renderCinema()}
+                </div>
             </div>
         );
     }
@@ -65,7 +79,7 @@ class LocationCinema extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         detailCinema: id => {
-            dispatch(action.actListRapHeThongAPI(id));
+            dispatch(action.actLichChieuRapAPI(id));
         }
     }
 }
@@ -75,4 +89,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LocationCinema);
+export default connect(mapStateToProps, mapDispatchToProps)(LichChieuCinema);

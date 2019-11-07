@@ -1,23 +1,16 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import { Route } from 'react-router-dom';
-import ListCarousel from '../Carousel/ListCarousel';
-import Sticker from '../IconSticker.js/Sticker';
-import Branch from '../Branch-cinema/branch'
-import Promotion from '../Promotion/promotion';
-import DienAnh from '../News/DienAnh';
+import Header from '../header/header';
+import Navbar from '../Navbar/navbar'
+import ManagerFooter from '../Footer/ManagerFooter';
 
 const HomeLayOut = (props) => {
-    return (
-        <Fragment>
-            <Headers />
-            <ListCarousel />
-            <Sticker />
-            <Branch />
-            {props.children}
-            <Promotion />
-            <DienAnh />
-        </Fragment>
-    )
+    return (<Fragment>
+        <Header />
+        <Navbar />
+        {props.children}
+        <ManagerFooter />
+    </Fragment>)
 }
 export default function HomeTemplate({ Component, ...props }) {
     return (<Route

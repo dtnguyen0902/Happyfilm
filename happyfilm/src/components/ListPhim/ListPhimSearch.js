@@ -1,0 +1,40 @@
+import React, { Component } from 'react';
+import * as action from '../../redux/action/Action';
+import { connect } from "react-redux";
+import PhimItemSearch from './PhimItemSearch';
+
+class ListPhimSearch extends Component {
+    renderSource = () => {
+        let { ListFilms } = this.props;
+        return ListFilms.map((item, index) => {
+            return (
+                <PhimItemSearch key={index} movie={item} />
+            )
+        })
+    }
+    componentDidMount() {
+        this.props.layDuLieu();
+    }
+    render() {
+        return (
+            <div className="container">
+                {this.renderSource()}
+            </div>
+        );
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        layDuLieu: () => {
+            dispatch(action.actOnListMovieAPI())
+        }
+    }
+}
+const mapStateToProps = state => {
+    return {
+        ListFilms: state.movieReducer.ListFilms
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListPhimSearch);

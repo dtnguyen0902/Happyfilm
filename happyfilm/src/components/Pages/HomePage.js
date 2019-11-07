@@ -6,7 +6,6 @@ import Branch from '../Branch-cinema/branch';
 import Promotion from '../Promotion/promotion';
 import DienAnh from '../News/DienAnh';
 
-
 class HomePage extends Component {
     render() {
         return (
@@ -14,9 +13,7 @@ class HomePage extends Component {
                 <ListCarousel />
                 <ListPhim />
                 <Sticker />
-                <Branch />
                 <Promotion />
-                <DienAnh />
             </div>
         );
     }
