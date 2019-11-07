@@ -6,8 +6,12 @@ class BranchLogo extends Component {
     render() {
         let { branch } = this.props;
         return (
-            <NavLink className='branchLogo' to={`/${branch.maHeThongRap}`}>
-                <img src={branch.logo} alt="" className='myLogo'/>
+            <NavLink to={`/lich-chieu/${branch.maHeThongRap}`}>
+                <div className="card bg-dark" style={{ width: '18rem' }}>
+                    <ul className="list-group list-group-flush ">
+                        <li className="list-group-item bg-dark">{branch.maHeThongRap}</li>
+                    </ul>
+                </div>
             </NavLink>
         );
     }

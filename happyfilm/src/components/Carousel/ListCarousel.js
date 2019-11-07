@@ -5,44 +5,25 @@ import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 import _carousel from '../../SASS/Components/Carousel/_carousel.scss'
 import SearchPhim from "./Form/SearchPhim";
-import Liitem from "./Liitem";
 
 class ListCarousel extends Component {
-    renderTrailer = () => {
-        let { ListFilms } = this.props;
-        return ListFilms.map((item, index) => {
-            if (index < 1) {
-                return <Carousel key={index} carousel={item} className="carousel-item active" />
-            }
-        })
-    }
-    renderLi = () => {
-        let { ListFilms } = this.props;
-        return ListFilms.map((item,index) => {
-            return <Liitem data-target="#myCarousel" key={index} carousel={item}></Liitem>
-        })
-    }
-
-    componentDidMount() {
-        Axios({
-            method: "GET",
-            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01"
-        })
-            .then(result => {
-                this.props.layDuLieu(result.data)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
     render() {
         return (
             <div id="myCarousel" className="myCarousel carousel slide" data-ride="carousel">
-                <ol className="carousel-indicators">
-                    {this.renderLi()}
-                </ol>
                 <div className="carousel-inner" role="listbox">
-                    {this.renderTrailer()}
+                    <div className="carousel-item ">
+                        <img src="./img/banner-2048x682_1572600297999.jpg" className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="./img/psm-ss-2048x682_1572851614726.jpg" className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                        <img src="./img/dr-ss-2048x682_1573034520974.jpg" className="d-block w-100" alt="..." />
+                    </div>
+                    <div className="carousel-item active">
+                        <img src="./img/haloween.jpg" className="d-block w-100" alt="..." />
+                    </div>
+
                     <a className="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true" />
                         <span className="sr-only">Previous</span>
@@ -58,17 +39,5 @@ class ListCarousel extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        layDuLieu: ListFilms => {
-            dispatch(action.layDuLieu(ListFilms))
-        }
-    }
-}
-const mapStateToProps = state => {
-    return {
-        ListFilms: state.movieReducer.ListFilms
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListCarousel);
+export default connect(null, null)(ListCarousel);

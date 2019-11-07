@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import * as action from '../../../redux/action/Action';
 import { connect } from "react-redux";
-import Axios from 'axios';
-import CumRap from './CumRap';
-import OptionNgay from './OptionNgay';
+
 
 class FormNgay extends Component {
     render() {

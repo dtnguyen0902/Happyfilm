@@ -26,7 +26,7 @@ class ListPhim extends Component {
                         <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#phimDangChieu" role="tab" aria-controls="pills-home" aria-selected="true">PHIM ĐANG CHIẾU</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#phimSapChieu" role="tab" aria-controls="pills-profile" aria-selected="false">PHIM SẮP CHIẾU</a>
+                        <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#phimSapChieu" role="tab" aria-controls="pills-profile" aria-selected="false" name='PHIM SẮP CHIẾU'>PHIM SẮP CHIẾU</a>
                     </li>
                 </ul>
                 <div className="tab-content" id="pills-tabContent">

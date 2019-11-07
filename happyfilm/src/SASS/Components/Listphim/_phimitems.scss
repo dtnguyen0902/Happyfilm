@@ -4,6 +4,13 @@
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 4;
+    display: table-header-group;
+}
+.myCinema{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    height: 100%;
 }
 .myPhim__Name{
     text-overflow: ellipsis;
@@ -20,6 +27,13 @@
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  
+}
+.myPhim_moTaNavbar{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;  
 }

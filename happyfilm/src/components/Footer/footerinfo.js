@@ -1,54 +1,55 @@
 import React, { Component } from 'react';
+import {  NavLink } from "react-router-dom";
 import _footer from '../../SASS/Components/Footer/_footer.scss';
 class Footerinfo extends Component {
     render() {
         return (
             <div className="myFooter">
                 <div className="container">
-                    <ul className="container navbar-nav">
+                    <ul className="container navbar-nav footer">
                         <div className="row">
                             <div className="col-3">
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        VỀ CHÚNG TÔI</a>
-                                    <a className="nav-link" href="#">
-                                        THỎA THUẬN SỬ DỤNG</a>
-                                    <a className="nav-link" href="#">
-                                        QUY CHẾ HOẠT ĐỘNG</a>
-                                    <a className="nav-link" href="#">
-                                        CHÍNH SÁCH BẢO MẬT</a>
+                                <li className="nav-item footer">
+                                    <NavLink className="nav-link" to='/ve-chung-toi'>
+                                        VỀ CHÚNG TÔI</NavLink>
+                                    <NavLink className="nav-link" to='/thoa-thuan-su-dung'>
+                                        THỎA THUẬN SỬ DỤNG</NavLink>
+                                    <NavLink className="nav-link" to='/quy-che-hoat-dong'>
+                                        QUY CHẾ HOẠT ĐỘNG</NavLink>
+                                    <NavLink className="nav-link" to='/chinh-sach-bao-mat'>
+                                        CHÍNH SÁCH BẢO MẬT</NavLink>
                                 </li>
                             </div>
                             <div className="col-3">
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        THỂ LOẠI PHIM</a>
-                                    <a className="nav-link" href="#">
-                                        PHIM HAY THÁNG</a>
-                                    <a className="nav-link" href="#">
-                                        BLOG ĐIỆN ẢNH</a>
-                                    <a className="nav-link" href="#">
-                                        BÌNH LUẬN PHIM</a>
+                                <li className="nav-item footer">
+                                    <NavLink className="nav-link" to='the-loai-phim'>
+                                        THỂ LOẠI PHIM</NavLink>
+                                    <NavLink className="nav-link"  to='phim-hay-thang'>
+                                        PHIM HAY THÁNG</NavLink>
+                                    <NavLink className="nav-link"  to='blog-dien-anh'>
+                                        BLOG ĐIỆN ẢNH</NavLink>
+                                    <NavLink className="nav-link"  to='binh-luan-phim'>
+                                        BÌNH LUẬN PHIM</NavLink>
                                 </li>
                             </div>
                             <div className="col-3">
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        GÓP Ý</a>
-                                    <a className="nav-link" href="#">
-                                        SALE & SERVICE</a>
-                                    <a className="nav-link" href="#">
-                                        RẠP/GIÁ VÉ</a>
+                                <li className="nav-item footer">
+                                    <NavLink className="nav-link"  to='gop-y'>
+                                        GÓP Ý</NavLink>
+                                    <NavLink className="nav-link"  to='sale-service'>
+                                        SALE & SERVICE</NavLink>
+                                    <NavLink className="nav-link"  to='rap-gia-ve'>
+                                        RẠP/GIÁ VÉ</NavLink>
                                 </li>
                             </div>
                             <div className="col-3">
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        <i class="fa fa-facebook" aria-hidden="true">FACEBOOK</i></a>
-                                    <a className="nav-link" href="#">
-                                        <i class="fa fa-google" aria-hidden="true"> GOOGLE</i></a>
-                                    <a className="nav-link" href="#">
-                                        <i class="fa fa-instagram" aria-hidden="true">INSTAGRAM</i></a>
+                                <li className="nav-item footer">
+                                    <NavLink className="nav-link"  to='face-book'>
+                                        <i class="fa fa-facebook" aria-hidden="true">FACEBOOK</i></NavLink>
+                                    <NavLink className="nav-link"  to='goo-gle'>
+                                        <i class="fa fa-google" aria-hidden="true"> GOOGLE</i></NavLink>
+                                    <NavLink className="nav-link"  to='insta-gram'>
+                                        <i class="fa fa-instagram" aria-hidden="true">INSTAGRAM</i></NavLink>
                                 </li>
                             </div>
                         </div>

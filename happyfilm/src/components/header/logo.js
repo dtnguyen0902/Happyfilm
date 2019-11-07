@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import _header from "../../SASS/Components/Header/_header.scss";
+import { NavLink } from "react-router-dom";
 
 export default class Logo extends Component {
     render() {
         return (
             <div className='row align-items-center'>
                 <div>
-                    <a className="navbar-brand" href="#">
+                    <NavLink to='/' className="navbar-brand">
                         <img
                             className="headerImg navbar-brand" src="../img/logo_happyfilm_nobg.png"
                         />
-                    </a>
+                    </NavLink>
                 </div>
                 <div>
                     <h3 className='happyfilm'>Happy Film</h3>

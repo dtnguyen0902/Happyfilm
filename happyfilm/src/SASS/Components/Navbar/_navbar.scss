@@ -3,21 +3,66 @@
 .mynavBg{
     background-color: $color-grey; 
 }
-ul li {
-    content: '';
-    padding: $pd-0 $pd-3;
-    border-left: $bd-1 solid $color-mint;
-    justify-content: space-between;
-    &:hover{
-        border-bottom:  $bd-1 solid $color-mint;
-    }
+ul{
+    padding: 0;
+    list-style: none;
+    background: $color-grey;
+}
+ul li{
+    display: inline-block;
+    position: relative;
+    line-height: 21px;
+    text-align: left;
 }
 ul li a{
-    margin: $mg-0;
+    display: block;
     color: $color-mint;
-    &:hover{
-        color: $color-mint;
-    }
+    text-decoration: none;
+    padding: 20px;
+}
+ul li a:hover{
+    color: $color-mint;
+    
+    width: 100%;
+}
+ul li ul.dropdown{
+    background:  $color-grey;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+ul li ul.dropdown.gocDienAnh{
+    width: 180px;
+    background:  $color-grey;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+
+ul li ul.dropdown li{
+    width: 100%;
+}
+ul li ul.dropdown .carouselNavbar{
+    width: 1000px;
+    height: 100%;
+    
+}
+ul li a.carouselNavbar{
+    padding: 0 10px;
+}
+ul li ul.carouselNavbar {
+    padding: 20px;
+}
+p{
+    margin: 0;
+}
+ul li:hover ul.dropdown{
+    display: block;	/* Display the dropdown */
+}
+ul li ul.dropdown li{
+    display: block;
 }
 
 .myNav__link{
