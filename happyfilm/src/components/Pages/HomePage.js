@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import ListCarousel from '../Carousel/ListCarousel';
 import ListPhim from '../ListPhim/ListPhim';
 import Sticker from '../IconSticker.js/Sticker';
-import Branch from '../Branch-cinema/branch';
 import Promotion from '../Promotion/promotion';
-import DienAnh from '../News/DienAnh';
-
+import Header from '../header/header';
+import Navbar from '../Navbar/navbar';
 class HomePage extends Component {
-    
     render() {
-    console.log('homepage', this.props);
+        console.log(this.props)
         return (
             <div>
-<<<<<<< HEAD
-                <Header {...this.props}/>
-                <Navbar />
-=======
->>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49
+                
                 <ListCarousel />
                 <ListPhim />
                 <Sticker />

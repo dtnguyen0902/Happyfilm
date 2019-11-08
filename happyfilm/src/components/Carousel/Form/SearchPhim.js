@@ -8,15 +8,15 @@ class SearchPhim extends Component {
     render() {
         return (
             <div className='myForm'>
-                <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li className="nav-item">
-                        <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#theoPhim" role="tab" aria-controls="pills-home" aria-selected="true">Theo phim</a>
+                <ul className="nav nav-pills mb-3 myBranchForm" id="pills-tab" role="tablist">
+                    <li className="nav-item myBranch">
+                        <a className="nav-link active myBranchForm" id="pills-home-tab" data-toggle="pill" href="#theoPhim" role="tab" aria-controls="pills-home" aria-selected="true">Theo phim</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#theoNgay" role="tab" aria-controls="pills-profile" aria-selected="false">Theo ngày</a>
+                    <li className="nav-item myBranch">
+                        <a className="nav-link myBranchForm" id="pills-profile-tab" data-toggle="pill" href="#theoNgay" role="tab" aria-controls="pills-profile" aria-selected="false">Theo ngày</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" id="pills-contact-tab" data-toggle="pill" href="#theoRap" role="tab" aria-controls="pills-contact" aria-selected="false">Theo rạp</a>
+                    <li className="nav-item myBranch">
+                        <a className="nav-link myBranchForm" id="pills-contact-tab" data-toggle="pill" href="#theoRap" role="tab" aria-controls="pills-contact" aria-selected="false">Theo rạp</a>
                     </li>
                 </ul>
                 <div className="tab-content" id="pills-tabContent">

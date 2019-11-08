@@ -4,6 +4,10 @@ ul.myBranch li a.myBranch.active{
     background-color: $color-mint;
     color: $color-grey;
 }
+ul.myBranchForm li a.myBranchForm.active{
+    background-color: $color-mint;
+    color: $color-grey;
+}
 ul.myBranch{
     background-color: $color-grey;
     width: 60%;
@@ -12,7 +16,14 @@ ul.myBranch{
     margin-top: 40px;
     margin-bottom: 10px;
 }
-ul li a.myBranch{
+ul.myBranchForm{
+    
+    padding: 0 ;
+    margin-left: 0;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+ul li a.myBranch,ul li a.myBranchForm{
     color: $color-mint;
 }
 ul li a.myBranch:hover{
@@ -32,9 +43,43 @@ ul li a.myBranch:hover{
     margin-left: 70px;
     text-align: center;
 }
-
+.myPhimCinemaMovie{
+    font-size: 40px;
+    font-family: 'Playball', cursive;
+    letter-spacing: 2;
+    border: 1px solid $color-mint;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
 .borderCinema{
     border: 1px solid $color-mint;
     margin-top: 30px;
     width: 100%;
+}
+
+.lichChieuCinema{
+    background-color: $color-grey;
+    color: $color-mint;
+    border: 1px solid $color-mint;
+    padding: 10px;
+    font-size: 14px;
+}
+.lichChieuCinema:hover,.bookVe:hover{
+    text-decoration: none;
+    background-color: $color-mint;
+    color: $color-grey;
+}
+.lichChieuCinema.active{
+    background-color: $color-white;
+    color: $color-grey;
+}
+.bookVe{
+    background-color: $color-grey;
+    color: $color-white;
+    border: 1px solid $color-white;
+    padding: 10px;
+    font-size: 14px;
 }

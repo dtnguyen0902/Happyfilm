@@ -11,8 +11,7 @@ export default class Header extends Component {
                 <nav className="myHeader navbar navbar-expand-lg  d-flex justify-content-between">
                     <Logo />
                     <div className="row">
-                        
-                        <LoginSuccess/>
+                        <LoginSuccess />
                     </div>
                 </nav>
             </div>
