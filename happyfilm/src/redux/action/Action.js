@@ -70,7 +70,8 @@ const actLichChieuRapAPI = (id) => {
             .then(result => {
                 dispatch({
                     type: ActionType.LAY_LICH_CHIEU_RAP,
-                    Cinema: result.data
+                    Cinema: result.data,
+                    loading: true
                 }
                 )
             })

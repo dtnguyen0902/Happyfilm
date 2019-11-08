@@ -1,7 +1,10 @@
 @import "../../Helper/variable";
 
 .mynavBg{
-    background-color: $color-grey; 
+    background-color: $color-mint; 
+}
+.myNav__ul {
+    background-color: $color-mint;
 }
 ul{
     padding: 0;
@@ -16,13 +19,12 @@ ul li{
 }
 ul li a{
     display: block;
-    color: $color-mint;
+    color: $color-grey;
     text-decoration: none;
     padding: 20px;
 }
 ul li a:hover{
-    color: $color-mint;
-    
+    color: $color-grey;
     width: 100%;
 }
 ul li ul.dropdown{
@@ -71,7 +73,7 @@ ul li ul.dropdown li{
 
 .myNav .myNav__ul .myNav__link {
     line-height: $line-height-0;
-    font-weight: $fw-bold-0 ;
+    font-weight: 500 ;
 }
 .gocDienAnh__ul{
     display: none;

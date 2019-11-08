@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import _phimitems from '../../SASS/Components/Listphim/_phimitems.scss';
 
-
 class PhimItems extends Component {
   render() {
     let { movie } = this.props;

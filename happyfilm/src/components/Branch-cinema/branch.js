@@ -14,7 +14,7 @@ class Branch extends Component {
     }
     render() {
         return (
-            <div className='container'>
+            <div className='container px-0'>
             {this.renderRap()}
             </div>
         )

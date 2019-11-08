@@ -1,7 +1,6 @@
 import HomePage from "./components/Pages/HomePage";
 import DetailMovie from "./components/Pages/DetailMovie";
 import LichChieuCinema from "./components/Pages/LichChieuCinema";
-import Branch from "./components/Branch-cinema/branch";
 import About from "./components/Pages/About";
 import ThoaThuan from './components/Pages/ThoaThuan';
 import QuyCheHoatDong from './components/Pages/QuyCheHoatDong';
@@ -17,6 +16,7 @@ import Facebook from './components/Pages/Facebook';
 import Google from './components/Pages/Google';
 import Instagram from './components/Pages/Instagram';
 import ListBranch from "./components/Branch-cinema/ListBranch";
+import DatVe from "./components/Pages/DatVe";
 
 const routerHome = [
     {
@@ -27,7 +27,7 @@ const routerHome = [
     {
         path: "/ve-chung-toi",
         exact: false,
-        component: About 
+        component: About
     },
     {
         path: "/thoa-thuan-su-dung",
@@ -109,15 +109,15 @@ const routerHome = [
         exact: false,
         component: LichChieuCinema
     },
-    // {
-    //     path:"/:id/:cinema",
-    //     exact: false,
-    //     component: LichChieuCinema
-    // },
+    {
+        path: "/dat-ve/:id",
+        exact: false,
+        component: DatVe
+    },
 
 ]
 
 
 
 
-export { routerHome}
+export { routerHome }
