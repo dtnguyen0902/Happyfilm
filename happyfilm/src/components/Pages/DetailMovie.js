@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-
 class DetailMovie extends Component {
     componentDidMount() {
         let id = this.props.match.params.id;
@@ -14,7 +13,7 @@ class DetailMovie extends Component {
             return movie.lichChieu.map((item, index) => {
                 return (
                     <tr key={index}>
-                        <td>{item.thongTinRap.tenCumRap}</td>
+                        <td>{item.thongTinRap.tenCumRap }</td>
                         <td>{item.thongTinRap.tenRap}</td>
                         <td>{new Date(item.ngayChieuGioChieu).toLocaleDateString()}</td>
                         <td>{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</td>

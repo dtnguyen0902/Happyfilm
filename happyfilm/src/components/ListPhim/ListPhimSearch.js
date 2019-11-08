@@ -17,7 +17,7 @@ class ListPhimSearch extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container px-0">
                 {this.renderSource()}
             </div>
         );

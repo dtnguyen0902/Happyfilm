@@ -1,13 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
-import ListCarousel from '../Carousel/ListCarousel';
-import Branch from '../Branch-cinema/branch';
-import ListPhim from '../ListPhim/ListPhim';
-import Promotion from '../Promotion/promotion';
-import DienAnh from '../News/DienAnh';
-import LocationCinema from './LocationCinema';
-import _phimitems from '../../SASS/Components/Listphim/_phimitems.scss';
+import ListBranch from '../Branch-cinema/ListBranch';
+import { NavLink } from "react-router-dom";
 
 class LichChieuCinema extends Component {
     componentWillReceiveProps(nextProps) {
@@ -23,54 +18,59 @@ class LichChieuCinema extends Component {
     renderCinema = () => {
         return this.props.Cinema.map((item, index) => {
             return (
-                <Fragment key={index}>
+                <div key={index}>
                     <Fragment className="card bg-dark container">
                         {item.lstCumRap.map((item, index) => {
                             return (
-                                <Fragment key={index}>
+                                <div key={index}>
                                     <div className='row'>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{item.tenCumRap}</h5>
-                                            <p className="card-text">{item.diaChi}</p>
-                                        </div>
-                                        <div>{item.danhSachPhim.map((item, index) => {
-                                            return (
-                                                <div className='col-sm-12' key={index}>
-                                                    <div className="card-body">
-                                                        <h5 className="card-title">{item.tenPhim}</h5>
-                                                    </div>
-                                                    <div className='row mx-0 px-0 myCinema'>
-                                                        {item.lstLichChieuTheoPhim.map((item, index) => {
-                                                            return (
-                                                                <div className="card bg-dark myCinema" style={{ width: '8' }} key={index}>
-                                                                    <div className="card-body px-2 py-2">
-                                                                        <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
-                                                                        <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
+                                        <div className='borderCinema'>
+                                            <div className="card-body myCinemaBranch">
+                                                <h5 className="card-title">{item.tenCumRap}</h5>
+                                                <p className="card-text">Địa chỉ: {item.diaChi}</p>
+                                            </div>
+                                            <div>{item.danhSachPhim.map((item, index) => {
+                                                return (
+                                                    <div className='col-sm-12' key={index}>
+                                                        <div className="card-body">
+                                                            <h5 className="card-title myPhimCinema">{item.tenPhim}</h5>
+                                                        </div>
+                                                        <div className='row px-0 myCinemaBook'>
+                                                            {item.lstLichChieuTheoPhim.map((item, index) => {
+                                                                return (
+                                                                    <div className="card bg-dark" style={{ width: '8' }} key={index}>
+                                                                        <NavLink className="card-body px-2 py-2" to={`/dat-ve/${item.maLichChieu}`}>
+                                                                            <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
+                                                                            <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
+                                                                        </NavLink>
                                                                     </div>
-                                                                </div>
-                                                                // <div></div>
-                                                            )
-                                                        })}
+                                                                )
+                                                            })}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )
-                                        })}
+                                                )
+                                            })}
+                                            </div>
                                         </div>
                                     </div>
-                                </Fragment>
+                                </div>
                             )
                         })}
                     </Fragment>
-                </Fragment>
+                </div>
             )
         })
     }
     render() {
         return (
-            <div className='myCinema'>
-                <Branch />
-                <div className='container'>
-                    {this.renderCinema()}
+            <div className='myCinema container'>
+                <div className='row'>
+                    <div className='col-4 px-0'>
+                        <ListBranch />
+                    </div>
+                    <div className='col-8'>
+                        {this.renderCinema()}
+                    </div>
                 </div>
             </div>
         );

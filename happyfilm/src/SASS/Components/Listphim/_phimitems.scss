@@ -6,11 +6,11 @@
     -webkit-line-clamp: 4;
     display: table-header-group;
 }
-.myCinema{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 4;
+.myCinemaBook{
+    padding: 0;
     height: 100%;
+    width: 80%;
+    margin-left: 80px;
 }
 .myPhim__Name{
     text-overflow: ellipsis;
