@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 class OptionNgay extends Component {
     render() {
-        let { optionNgay } = this.props;
         return (
-            <option>{optionNgay}</option>
+            <option>1</option>
         );
     }
 }

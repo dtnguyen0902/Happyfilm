@@ -4,6 +4,13 @@
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 4;
+    display: table-header-group;
+}
+.myCinemaBook{
+    padding: 0;
+    height: 100%;
+    width: 80%;
+    margin-left: 80px;
 }
 .myPhim__Name{
     text-overflow: ellipsis;
@@ -20,6 +27,13 @@
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  
+}
+.myPhim_moTaNavbar{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;  
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import _button from '../../SASS/Function/_button.scss';
 import * as action from './../../redux/action/Action';
@@ -34,6 +35,24 @@ import LoginSuccess from './LoginSuccess';
     }
 
     
+=======
+
+import React, {Component} from 'react'
+// import LoginForm from './LoginForm'
+
+// class Login extends React.Component {
+    
+//     render() {
+//         return <LoginForm onSubmit={this.submit} />
+//     }
+// }
+// export default Login;
+
+
+
+
+export default class Login extends Component {
+>>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49
     render() {
         return (
             <div>

@@ -1,0 +1,40 @@
+@import "../../Helper//variable";
+
+ul.myBranch li a.myBranch.active{
+    background-color: $color-mint;
+    color: $color-grey;
+}
+ul.myBranch{
+    background-color: $color-grey;
+    width: 60%;
+    padding: 0 ;
+    margin-left: 0;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+ul li a.myBranch{
+    color: $color-mint;
+}
+ul li a.myBranch:hover{
+    color: $color-mint;
+}
+.myPhimCinema{
+    font-size: 40px;
+    font-family: 'Playball', cursive;
+    letter-spacing: 2;
+    border: 1px solid $color-mint;
+    padding: 10px;
+    width: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+    margin-left: 70px;
+    text-align: center;
+}
+
+.borderCinema{
+    border: 1px solid $color-mint;
+    margin-top: 30px;
+    width: 100%;
+}

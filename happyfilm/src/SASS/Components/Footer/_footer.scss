@@ -1,0 +1,17 @@
+.myFooter{
+    font-size: 14px;
+    background-color: #45A29E;
+}
+.myFooter ul{
+    background: #45A29E;
+}
+.myFooter ul li, .myFooter ul li a {
+    border: none;
+    color: white;
+    &:hover{
+        color: #66FCF1;
+    }
+}
+.myFooter ul li h6{
+    padding: 0;
+}

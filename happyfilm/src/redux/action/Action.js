@@ -65,14 +65,23 @@ export const layDuLieu = ListFilm => {
         ListFilm
     }
 }
+<<<<<<< HEAD
 export const actOnListMovieAPI = () => {
+=======
+const layThongTinrap = ListRap => {
+    return {
+        type: ActionType.LAY_DATA_RAP,
+        ListRap
+    }
+}
+const actOnListMovieAPI = () => {
+>>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49
     return dispatch => {
         Axios({
             method: "GET",
             url: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01"
         })
             .then(result => {
-                console.log(result)
                 dispatch(layDuLieu(result.data))
             })
             .catch(error => {
@@ -80,6 +89,7 @@ export const actOnListMovieAPI = () => {
             })
     }
 }
+<<<<<<< HEAD
 
 export const actDetailMovieAPI =(id)=>{
     return dispatch=>{
@@ -129,3 +139,78 @@ export const layDsPhim = danhSachPhim => {
 }
 // Thiệt ra k cần export từng cái vậy cho mệt, có thể viết lại = cách thêm export trc các action là được
 // export { layDuLieu, layThongTinrap, layThongTinLichChieu, layMaRap, layDsPhim, actOnListMovieAPI,actDetailMovieAPI,actsingUp,actLogin }
+=======
+const actDetailMovieAPI = id => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
+        })
+            .then(result => {
+                console.log(result.data)
+                dispatch({
+                    type: ActionType.LAY_CHI_TIET_PHIM,
+                    movie: result.data
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+
+
+const actListRapAPI = () => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap"
+        })
+            .then(result => {
+                dispatch(layThongTinrap(result.data))
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+const actLichChieuRapAPI = (id) => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${id}&maNhom=GP01`
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_LICH_CHIEU_RAP,
+                    Cinema: result.data,
+                    loading: true
+                }
+                )
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+
+const actListRapHeThongAPI = id => {
+    return dispatch => {
+        Axios({
+            method: 'GET',
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${id}`
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_CHI_TIET_RAP,
+                    ListCinemas: result.data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+
+export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI }
+>>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49

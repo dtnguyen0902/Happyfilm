@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+
 import Search from "../header/search";
+import { NavLink } from "react-router-dom";
 import _navbar from '../../SASS/Components/Navbar/_navbar.scss';
+import ListCarouselNavbar from "../Carousel/ListCarouselNavbar";
 
 export default class Navbar extends Component {
     render() {
@@ -9,14 +12,24 @@ export default class Navbar extends Component {
                 <nav className="myNav navbar navbar-expand ">
                     <ul className="myNav__ul container navbar-nav">
                         <li className="myNav__li nav-item">
-                            <a className="myNav__link nav-link" href="#">
+                            <NavLink className="myNav__link nav-link" to={`${'/danh-sach-phim'}`}>
                                 MUA VÉ
-                                </a>
+                                </NavLink>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
                                 PHIM
                                 </a>
+                            <ul className='dropdown carouselNavbar'>
+                                <li><a className='carouselNavbar'>PHIM ĐANG CHIẾU</a></li>
+                                <li>
+                                    <a className='row carouselNavbar'><ListCarouselNavbar /></a>
+                                </li>
+                                <li><a className='carouselNavbar'>PHIM SẮP CHIẾU</a></li>
+                                <li>
+                                    <a className='row carouselNavbar'><ListCarouselNavbar /></a>
+                                </li>
+                            </ul>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
@@ -36,13 +49,13 @@ export default class Navbar extends Component {
                         <li className="nav-item">
                             <a className="myNav__link dienAnh nav-link" href="#">
                                 GÓC ĐIỆN ẢNH
-                                <ul className='gocDienAnh__ul'>
+                                <ul className='dropdown gocDienAnh'>
                                     <li className="gocDienAnh"><a>THỂ LOẠI PHIM</a></li>
                                     <li className="gocDienAnh"><a>PHIM HAY THÁNG</a></li>
                                     <li className="gocDienAnh"><a>BLOG ĐIỆN ẢNH</a></li>
                                     <li className="gocDienAnh"><a>BÌNH LUẬN PHIM</a></li>
                                 </ul>
-                                </a>
+                            </a>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
