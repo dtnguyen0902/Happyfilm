@@ -6,7 +6,7 @@ import ManagerFooter from '../Footer/ManagerFooter';
 
 const HomeLayOut = (props) => {
     return (<Fragment>
-        <Header />
+        <Header  />
         <Navbar />
         {props.children}
         <ManagerFooter />

@@ -9,8 +9,8 @@ class PhimItemSearch extends Component {
 
         return (
             <div className="card bg-dark" style={{ width: '18rem' }}>
-                <ul className="list-group list-group-flush ">
-                    <li className="list-group-item bg-dark">{movie.tenPhim}</li>
+                <ul className="list-group list-group-flush lichChieuCinema ">
+                    <NavLink to={`/lich-chieu-theo-phim/${movie.maPhim}`} className="list-group-item lichChieuCinema">{movie.tenPhim}</NavLink>
                 </ul>
             </div>
         );

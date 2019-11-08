@@ -1,11 +1,5 @@
 import HomePage from "./components/Pages/HomePage";
-<<<<<<< HEAD
-import DetailMovie from "./components/ListPhim/DetailMovie";
-
-import headerlogin from './components/header/headerlogin';
 import HomePageLogin from "./components/Pages/HomePageLogin";
-
-=======
 import DetailMovie from "./components/Pages/DetailMovie";
 import LichChieuCinema from "./components/Pages/LichChieuCinema";
 import About from "./components/Pages/About";
@@ -24,7 +18,7 @@ import Google from './components/Pages/Google';
 import Instagram from './components/Pages/Instagram';
 import ListBranch from "./components/Branch-cinema/ListBranch";
 import DatVe from "./components/Pages/DatVe";
->>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49
+import LichChieuCinemaMovie from "./components/Pages/LichChieuCinemaMovie";
 
 const routerHome = [
     {
@@ -33,7 +27,6 @@ const routerHome = [
         component: HomePage
     },
     {
-<<<<<<< HEAD
         path:"/homepage-login",
         exact:false,
         component:HomePageLogin
@@ -42,9 +35,8 @@ const routerHome = [
         path:"/detail-movie/:id",
         exact:false,
         component:DetailMovie
-    }
-    
-=======
+    },
+    {
         path: "/ve-chung-toi",
         exact: false,
         component: About
@@ -130,12 +122,15 @@ const routerHome = [
         component: LichChieuCinema
     },
     {
+        path: "/lich-chieu-theo-phim/:id",
+        exact: false,
+        component: LichChieuCinemaMovie
+    },
+    {
         path: "/dat-ve/:id",
         exact: false,
         component: DatVe
     },
-
->>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49
 ]
 
 

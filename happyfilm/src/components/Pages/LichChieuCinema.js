@@ -39,7 +39,7 @@ class LichChieuCinema extends Component {
                                                             {item.lstLichChieuTheoPhim.map((item, index) => {
                                                                 return (
                                                                     <div className="card bg-dark" style={{ width: '8' }} key={index}>
-                                                                        <NavLink className="card-body px-2 py-2" to={`/dat-ve/${item.maLichChieu}`}>
+                                                                        <NavLink className="card-body px-2 py-2 bookVe" to={`/dat-ve/${item.maLichChieu}`}>
                                                                             <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
                                                                             <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
                                                                         </NavLink>

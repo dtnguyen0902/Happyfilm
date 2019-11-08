@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import _phimitems from '../../SASS/Components/Listphim/_phimitems.scss';
-import {NavLink}  from "react-router-dom";
-
 
 class PhimItems extends Component {
   render() {
     let { movie } = this.props;
-
-    
-
     return (
       <div className="myPhim col-12 col-md-3 py-3" >
         <div className="myCard card border-0 my-2">
@@ -20,17 +15,6 @@ class PhimItems extends Component {
           </div>
           <div className="card__content">
             <div className="card__button">
-<<<<<<< HEAD
-            <NavLink className="btn btn-danger"  to={`/detail-movie/${movie.maPhim}`}>Chi Tiết</NavLink>
-
-            
-            </div>
-
-            <div className="card__button">
-            
-          
-            
-=======
               <div className='row'>
                 <div className='col-6'>
                   <NavLink className='btn btn-info' to={`/chi-tiet-phim/${movie.maPhim}`}>Xem chi tiết</NavLink>
@@ -39,7 +23,6 @@ class PhimItems extends Component {
                   <button type="button" className="btn btn-danger btn-block">Mua Vé</button>
                 </div>
               </div>
->>>>>>> 6c2f398291e05d18d6ca35ab371f1095ce281d49
             </div>
           </div>
         </div>
