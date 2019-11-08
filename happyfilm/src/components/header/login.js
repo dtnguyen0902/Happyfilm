@@ -1,13 +1,46 @@
 import React, { Component } from 'react';
 import _button from '../../SASS/Function/_button.scss';
-export default class Login extends Component {
+import * as action from './../../redux/action/Action';
+import { connect } from 'react-redux';
+import {NavLink} from 'react-router-dom';
+import LoginSuccess from './LoginSuccess';
+
+
+ class Login extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            taiKhoan:"",
+            matKhau:""
+        }
+    }
+
+    componentDidMount(){
+        
+    }
+
+
+    handleOnChange=event=>{
+        let{name,value}=event.target;
+        this.setState({
+            [name]:value
+        });
+    };
+
+    handleOnSubmit=event=>{
+        event.preventDefault();
+        this.props.login(this.state);
+        this.props.history.push('/') //route về home
+    }
+
+    
     render() {
         return (
             <div>
                 <button type="button" className="myButton" data-toggle="modal" data-target="#myLogin">
-                    ĐĂNG NHẬP
-                </button>
-                {/* Modal */}
+                        ĐĂNG NHẬP
+                    </button>
+    
                 <div className="modal fade" id="myLogin" tabIndex={-1} role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable" role="document">
                         <div className="modal-content">
@@ -23,13 +56,14 @@ export default class Login extends Component {
                             </div>
                             <div className="modal-body">
                                 <div className="container">
+                                    <form onSubmit={this.handleOnSubmit}>
                                     <div className="modal-body">
                                         <div className="form-group">
                                             <div className="input-group mb-3 w-100">
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text fa fa-user" id="basic-addon1"></span>
                                                 </div>
-                                                <input type="text" className="form-control" placeholder="Tài Khoản" aria-describedby="basic-addon1" />
+                                                <input type="text" name="taiKhoan" className="form-control"  onChange={this.handleOnChange} placeholder="Tài Khoản" aria-describedby="basic-addon1" />
                                             </div>
                                         </div>
                                         <div className="form-group">
@@ -37,18 +71,23 @@ export default class Login extends Component {
                                                 <div className="input-group-prepend">
                                                     <span className="input-group-text fa fa-unlock-alt" id="basic-addon1"></span>
                                                 </div>
-                                                <input type="password" className="form-control" placeholder="Mật Khẩu" aria-describedby="basic-addon1" />
+                                                <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật Khẩu" aria-describedby="basic-addon1" />
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="modal-body py-0">
-                                <button type="button" class="btn container">Quên Mật Khẩu</button>
+                                    <div className="modal-body py-0">
+                                <button type="button" className="btn container">Quên Mật Khẩu</button>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" class="btn btn-primary container">ĐĂNG NHẬP</button>
+                                {/* <NavLink type="submit" className="btn btn-primary container" to={"/homepage-login"}>ĐĂNG NHẬP</NavLink> */}
+                                <button type="submit" className="btn btn-primary container">ĐĂNG NHẬP</button>
                             </div>
+
+
+                                    </form>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -56,3 +95,13 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapDispatchToProps=dispatch=>{
+    return{
+        login:(user)=>{
+            dispatch(action.actLogin(user));
+        }
+    }
+};
+
+export default connect(null,mapDispatchToProps)(Login);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from '../header/header';
+import HeaderLogin from '../header/headerlogin';
 import Navbar from '../Navbar/navbar';
 import ListCarousel from '../Carousel/ListCarousel';
 import ListPhim from '../ListPhim/ListPhim';
@@ -9,13 +9,11 @@ import Promotion from '../Promotion/promotion';
 import DienAnh from '../News/DienAnh';
 import ManagerFooter from '../Footer/ManagerFooter';
 
-class HomePage extends Component {
-    
+class HomePageLogin extends Component {
     render() {
-    console.log('homepage', this.props);
         return (
             <div>
-                <Header {...this.props}/>
+                <HeaderLogin />
                 <Navbar />
                 <ListCarousel />
                 <ListPhim />
@@ -29,4 +27,4 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+export default HomePageLogin;
