@@ -17,7 +17,7 @@ class DetailMovie extends Component {
         let {movie}=this.props
         console.log(movie);
         new Date("2019-01-02T14:10:00").toLocaleTimeString();
-        // vi mang ban dau khong co
+
         if(movie.lichChieu){
             return movie.lichChieu.map((item,index)=>{
                 return (

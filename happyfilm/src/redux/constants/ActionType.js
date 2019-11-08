@@ -5,3 +5,6 @@ export const LAY_THONG_TIN_LICH_CHIEU = 'GET_INFO_LICH_CHIEU';
 export const LAY_MA_RAP = "GET_MA_RAP";
 export const LAY_DS_PHIM = 'GET_DS_PHIM';
 export const DETAIL_MOVIE="GET_DETAIL_MOVIE";
+export const CLIENT_SIGNUP="GET_CLIENT_SIGNUP";
+export const CLIENT_LOGIN="GET_CLIENT_LOGIN";
+export const DAT_VE_PHIM="DAT_VE_PHIM";
