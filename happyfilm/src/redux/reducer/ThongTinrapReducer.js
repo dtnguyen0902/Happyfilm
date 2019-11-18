@@ -4,7 +4,8 @@ let initState = {
     ListRaps: [],
     Cinema: [],
     ListCinemas: [],
-    CinemaMovie: {}
+    CinemaMovie: {},
+    Booking: {}
 }
 const ThongTinrapReducer = (state = initState, action) => {
     switch (action.type) {
@@ -28,6 +29,9 @@ const ThongTinrapReducer = (state = initState, action) => {
             state.CinemaMovie = action.CinemaMovie
             return { ...state }
             
+        case ActionType.LAY_DS_PHONG_VE:
+            state.Booking = action.Booking;
+            return {...state}
         default:
             return { ...state }
     }

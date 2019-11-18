@@ -1,6 +1,6 @@
+import React, { Component } from 'react';
 import HomePage from "./components/Pages/HomePage";
 import HomePageLogin from "./components/Pages/HomePageLogin";
-import DetailMovie from "./components/Pages/DetailMovie";
 import LichChieuCinema from "./components/Pages/LichChieuCinema";
 import About from "./components/Pages/About";
 import ThoaThuan from './components/Pages/ThoaThuan';
@@ -19,6 +19,10 @@ import Instagram from './components/Pages/Instagram';
 import ListBranch from "./components/Branch-cinema/ListBranch";
 import DatVe from "./components/Pages/DatVe";
 import LichChieuCinemaMovie from "./components/Pages/LichChieuCinemaMovie";
+import Booking from "./components/Pages/Booking";
+import TotalMovie from "./components/ListPhim/TotalMovie";
+
+const DetailMovie = React.lazy(()=> import ('./components/Pages/DetailMovie'));
 
 const routerHome = [
     {
@@ -27,14 +31,14 @@ const routerHome = [
         component: HomePage
     },
     {
-        path:"/homepage-login",
-        exact:false,
-        component:HomePageLogin
+        path: "/homepage-login",
+        exact: false,
+        component: HomePageLogin
     }
-    ,{
-        path:"/detail-movie/:id",
-        exact:false,
-        component:DetailMovie
+    , {
+        path: "/detail-movie/:id",
+        exact: false,
+        component: DetailMovie
     },
     {
         path: "/ve-chung-toi",
@@ -127,9 +131,14 @@ const routerHome = [
         component: LichChieuCinemaMovie
     },
     {
+        path: "/toan-bo-phim",
+        exact: false,
+        component: TotalMovie
+    },
+    {
         path: "/dat-ve/:id",
         exact: false,
-        component: DatVe
+        component: Booking
     },
 ]
 

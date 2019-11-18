@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 class OptionFilm extends Component {
+    
     render() {
         let { optionFilm } = this.props;
+        
         return (
-            <option>{optionFilm.tenPhim}</option>
+            <option value={optionFilm.maPhim} name="optionFilm">{optionFilm.tenPhim}</option>
         );
     }
 }

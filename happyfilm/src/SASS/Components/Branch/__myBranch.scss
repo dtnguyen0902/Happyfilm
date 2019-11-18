@@ -45,7 +45,6 @@ ul li a.myBranch:hover{
 }
 .myPhimCinemaMovie{
     font-size: 40px;
-    font-family: 'Playball', cursive;
     letter-spacing: 2;
     border: 1px solid $color-mint;
     padding: 10px;
@@ -76,6 +75,13 @@ ul li a.myBranch:hover{
     background-color: $color-white;
     color: $color-grey;
 }
+.bookingVe{
+    background-color: $color-grey;
+    color: $color-white;
+    border: 1px solid $color-mint;
+    padding: 10px;
+    font-size: 14px;
+}
 .bookVe{
     background-color: $color-grey;
     color: $color-white;
@@ -83,3 +89,31 @@ ul li a.myBranch:hover{
     padding: 10px;
     font-size: 14px;
 }
+.bookingVe .bookingVeactive{
+    background-color: $color-mint;
+    color: $color-grey;
+}
+.bookingVeactive:hover{
+    text-decoration: none;
+    background-color: $color-mint;
+    color: $color-grey;
+}
+.bookingVebg,.bookingVebgposition{
+    background-color: $color-grey;
+    border: 1px solid $color-mint;
+}
+.bookingVebgposition{
+    position: fixed;
+    z-index: 999;
+    height: 550px;
+    margin-left: 80px;
+    padding-right: 0;
+}
+.bookingVe .bookingVedis:disabled{
+    background-color: $color-grey;
+    color: $color-mint;
+}
+.bookingVe .bookingVeactive:focus{
+    outline: none;
+}
+

@@ -5,6 +5,17 @@
     overflow: hidden;
     -webkit-line-clamp: 4;
     display: table-header-group;
+    
+}
+.myPhim:hover{
+    background-color: rgba(0,0, 0, 0.2);
+    .myPhim_moTa{
+        display: none;
+    }
+    .myMovieNavlink{
+    visibility: visible;
+    margin-bottom: 60px;
+    }
 }
 .myCinemaBook{
     padding: 0;
@@ -39,5 +50,17 @@
 }
 .myCard {
     color: $color-black;
-    
+    width: 255px;
+    height: 440px;
+}
+.myMovieNavlink{
+    visibility: hidden;
+}
+.myNavlink{
+    width: 100%;
+    margin: 2px 40px;
+}
+
+.myCardNavbar{
+    color: $color-black;
 }

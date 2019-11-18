@@ -4,7 +4,9 @@ import MoreInfoFilm from './MoreInfoFilm';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 
+
 class ListPhim extends Component {
+
     renderSource = () => {
         let { ListFilms } = this.props;
         return ListFilms.map((item, index) => {

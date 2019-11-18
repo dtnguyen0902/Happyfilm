@@ -1,0 +1,14 @@
+@import "../../Helper/variable";
+
+.myHeader,.myHeader__bg {
+    padding: $pd-0;
+}
+.headerImg {
+    width: 60px;
+}
+.happyfilm {
+    font-family: 'Playball', cursive;
+    font-size: $fs-5;
+    letter-spacing: 4px;
+    color: $color-mint;
+}

@@ -6,8 +6,40 @@
     background-color: rgba(31, 40, 51,0.4);
     padding: 20px;
     padding-bottom: 60px;
+    width: 25%;
 }
 .myButton__muaVe{
     position: absolute;
     right: 20px;
+    background-color: $color-grey;
+    color: $color-mint;
+    outline: none;
+    border-color: $color-mint;
+    margin: 0 $mg-05;
+    padding: $pd-1;
+    font-size: $fs-1;
+    &:hover{
+        background-color: $color-mint;
+        color: $color-grey;
+        border-color: $color-mint;
+    }
+}
+.myButton__xemThem{
+    background-color: $color-grey;
+    outline: none;
+    border-color: $color-mint;
+    margin: 0 $mg-05;
+    padding: $pd-1;
+    &:hover{
+        background-color: $color-mint;
+        color: $color-grey;
+        border-color: $color-mint;
+    }
+}
+option{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;  
 }
