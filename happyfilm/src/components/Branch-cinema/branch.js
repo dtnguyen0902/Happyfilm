@@ -5,6 +5,9 @@ import BranchLogo from './BranchLogo';
 import 'react-tabs/style/react-tabs.css';
 
 class Branch extends Component {
+    componentDidMount(){
+        this.props.layThongTinrap()
+    }
     renderRap = () => {
         return this.props.ListRaps.map((item, index) => {
             return (
@@ -23,8 +26,8 @@ class Branch extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        actCumRapHT: () => {
-            dispatch(action.layThongTinrap())
+        layThongTinrap: () => {
+            dispatch(action.actListRapAPI())
         }
     }
 }

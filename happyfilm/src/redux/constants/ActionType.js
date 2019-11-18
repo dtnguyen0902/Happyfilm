@@ -16,3 +16,6 @@ export const LAY_DATA_RAP = "GET_DATA_RAP";
 export const LAY_CHI_TIET_RAP = "GET_DETAIL_RAP";
 export const LAY_LICH_CHIEU_RAP = "GET_DATA_LICHCHIEU_RAP";
 export const LAY_LICH_CHIEU_PHIM = "GET_DATA_LICHCHIEU_PHIM";
+
+//lấy danh sách phòng vé
+export const LAY_DS_PHONG_VE = 'GET_lIST_BOOKING';

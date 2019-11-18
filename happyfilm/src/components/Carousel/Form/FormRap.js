@@ -1,24 +1,46 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import * as action from '../../../redux/action/Action';
 import { connect } from "react-redux";
-import OptionRap from './Optionrap';
+import FormCumPhim from './FormCumPhim';
+
 
 class FormRap extends Component {
-    renderForm = () => {
-        return this.props.ListRaps.map((item, index) => {
-            return <OptionRap key={index} optionRap={item} />
+    constructor(props) {
+        super(props);
+        this.state = ({
+            optionCinema: ''
         })
     }
+    selectCinema() {
+        this.setState({
+            optionCinema: this.refs.cinemaName.value
+        })
+    }
+
     componentDidMount() {
         this.props.layThongTinrap()
     }
+    renderForm = () => {
+        let { ListRaps } = this.props;
+        return ListRaps.map((item, index) => {
+            return <option key={index} value={item.maHeThongRap} isSelect={item}>{item.maHeThongRap}</option>
+        })
+    }
+
     render() {
         return (
-            <div className="form-group">
-                <select className="custom-select" name="" id="selectenPhim">
-                    <option selected='Chọn phim'>Chọn rạp</option>
-                    {this.renderForm()}
-                </select>
+            <div>
+                <div className="form-group">
+                    <select ref="cinemaName" className="custom-select" name="" id="selectenRap" onChange={(e) => { this.selectCinema() }}>
+                        <option selected='Chọn phim'>Chọn rạp</option>
+                        <Fragment>
+                            {this.renderForm()}
+                        </Fragment>
+                    </select>
+                </div>
+                <div>
+                <FormCumPhim isSelect={this.state.optionCinema} />
+                </div>
             </div>
         );
     }
@@ -35,5 +57,4 @@ const mapStateToProps = state => {
         ListRaps: state.ThongTinrapReducer.ListRaps
     }
 }
-
 export default connect(mapStateToProps, mapDispatchToProps)(FormRap);

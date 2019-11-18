@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
 import { Route } from 'react-router-dom';
-import Header from '../header/header';
+
 import Navbar from '../Navbar/navbar'
 import ManagerFooter from '../Footer/ManagerFooter';
-
+const Headers = React.lazy(() => import('../header/header'))
 const HomeLayOut = (props) => {
     return (<Fragment>
-        <Header  />
+        <Headers />
         <Navbar />
         {props.children}
         <ManagerFooter />

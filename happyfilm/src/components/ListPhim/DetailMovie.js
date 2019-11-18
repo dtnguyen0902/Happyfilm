@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import *as  action from './../../redux/action/Action';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 
 
 class DetailMovie extends Component {
