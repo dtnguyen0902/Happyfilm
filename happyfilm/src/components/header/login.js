@@ -36,16 +36,11 @@ class Login extends Component {
                     </button>
                 <div className="modal fade" id="myLogin" tabIndex={-1} role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable" role="document">
-                        <div className="modal-content">
+                        <div className="modal-content myModal">
                             <div className="modal-header text-center">
                                 <h5 className="modal-title">
                                     <img src="./img/logo_happyfilm_nobg.png" alt="First slide" width="20%" height="20%" className="rounded-circle" />
                                 </h5>
-                            </div>
-                            <div className="container">
-                                <div className="modal-body">
-                                    <span className="text-justify">Vui lòng đăng nhập trước khi mua vé để tích lũy điểm, cơ hội nhận thêm nhiều ưu đãi từ chương trình thành viên của HAPPY FILM.</span>
-                                </div>
                             </div>
                             <div className="modal-body">
                                 <div className="container">
@@ -78,7 +73,6 @@ class Login extends Component {
                                     </form>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

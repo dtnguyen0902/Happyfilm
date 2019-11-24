@@ -1,21 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import * as action from '../../../redux/action/Action';
 import { connect } from "react-redux";
-import FormNgay from './FormNgay';
-import OptionNgay from './OptionNgay'
+import OptionNgay from './OptionNgay';
+
 class FormCumRap extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isSelect: this.props.isSelect,
+            isSelect: this.props.isSelect
         }
     }
-    
     componentWillReceiveProps(nextprops) {
-        if (nextprops.isSelect !== this.props.isSelect) {
+        if ((nextprops.isSelect !== this.props.isSelect)) {
             this.props.formCinemaMovie(nextprops.isSelect)
-        }   
+        }
     }
+
     componentDidMount() {
         this.props.formCinemaMovie(this.props.isSelect)
     }
@@ -25,68 +25,9 @@ class FormCumRap extends Component {
             return this.props.CinemaMovie.heThongRapChieu.map((item, index) => {
                 return (
                     <Fragment key={index}>
-                        <Fragment>
-                            {item.cumRapChieu.map((item, index) => {
-                                return <Fragment key={index}>
-                                    <option>{item.tenCumRap}</option>
-                                </Fragment>
-                            })}
-                        </Fragment>
-                    </Fragment>
-                )
-            })
-        }
-    }
-    //lấy đối tượng
-
-    renderObj = () => {
-        if (this.props.CinemaMovie.heThongRapChieu) {
-            return this.props.CinemaMovie.heThongRapChieu.map((item, index) => {
-                return (
-                    <Fragment key={index}>
                         {item.cumRapChieu.map((item, index) => {
                             return <Fragment key={index}>
-                                <OptionNgay isDate={item} />
-                            </Fragment>
-                        })}</Fragment>
-                )
-            })
-        }
-    }
-    //function deleteduplicate
-    //lấy ngày chiếu
-    renderDate = () => {
-        if (this.props.CinemaMovie.heThongRapChieu) {
-            return this.props.CinemaMovie.heThongRapChieu.map((item, index) => {
-                return (
-                    <Fragment key={index}>
-                        {item.cumRapChieu.map((item, index) => {
-                            return <Fragment key={index}>
-                                {item.lichChieuPhim.map((item, index) => {
-                                    return <Fragment key={index}>
-                                        <option>{(item.ngayChieuGioChieu)}</option>
-                                    </Fragment>
-                                })}
-                            </Fragment>
-                        })}
-                    </Fragment>
-                )
-            })
-        }
-    }
-    //lấy giờ chiếu
-    renderTime = () => {
-        if (this.props.CinemaMovie.heThongRapChieu) {
-            return this.props.CinemaMovie.heThongRapChieu.map((item, index) => {
-                return (
-                    <Fragment key={index}>
-                        {item.cumRapChieu.map((item, index) => {
-                            return <Fragment key={index}>
-                                {item.lichChieuPhim.map((item, index) => {
-                                    return <Fragment key={index}>
-                                        <option>{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</option>
-                                    </Fragment>
-                                })}
+                                <option value={item}>{item.tenCumRap}</option>
                             </Fragment>
                         })}
                     </Fragment>
@@ -98,22 +39,11 @@ class FormCumRap extends Component {
         return (
             <Fragment>
                 <div className="form-group">
-                    <select className="custom-select" name="" id="selectenPhim">
+                    <select className="custom-select" name="" id="selectenPhim" ref="cinema">
                         <option selected='Chọn phim'>Chọn rạp</option>
-                        {this.renderSource()}
-
-                    </select>
-                </div>
-                <div className="form-group">
-                    <select className="custom-select" name="" id="selectenPhim">
-                        <option selected='Chọn phim'>Chọn ngày</option>
-                        {this.renderObj()}
-                    </select>
-                </div>
-                <div className="form-group">
-                    <select className="custom-select" name="" id="selectenPhim">
-                        <option selected='Chọn phim'>Chọn giờ</option>
-                        {this.renderTime()}
+                        <Fragment>
+                            {this.renderSource()}
+                        </Fragment>
                     </select>
                 </div>
             </Fragment>
