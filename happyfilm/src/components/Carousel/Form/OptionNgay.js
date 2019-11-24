@@ -1,30 +1,53 @@
 import React, { Component, Fragment } from 'react';
-import { stringify } from 'querystring';
-
+import * as action from '../../../redux/action/Action';
+import { connect } from "react-redux";
+import DetailDate from './Date/DetailDate';
 class OptionNgay extends Component {
-    
-    //lấy obj ngày giờ chiếu
-    renderOption = (calendar) => {
-        let newArr = new Set()
-        for (let item of calendar) {
-            newArr.add(new Date(item.ngayChieuGioChieu).toLocaleDateString())   
+
+    renderCinema = () => {
+        if (this.props.CinemaMovie.heThongRapChieu) {
+            return this.props.CinemaMovie.heThongRapChieu.map((item, index) => {
+                return (
+                    <Fragment key={index}>
+                        {item.cumRapChieu.map((item, index) => {
+                            return <Fragment key={index}>
+                                {item.lichChieuPhim.map((item, index) => {
+                                    return <Fragment key={index}>
+                                        <option>{(new Date(item.ngayChieuGioChieu).toLocaleDateString()) }</option>
+                                    </Fragment>
+                                })}
+                            </Fragment>
+                        })}
+                    </Fragment>
+                )
+            })
         }
-        return newArr
+    }
+    getUnique = (arr,key) => {
+        return [...new Map(arr.map(item => [item[key],item]).value())]
     }
     render() {
-        let { isDate } = this.props;
-        const calendar = isDate.lichChieuPhim;
-        const OptionCalendar = Array.from(this.renderOption(calendar))
-        console.log(OptionCalendar)
+        
         return (
             <Fragment>
-            {this.renderOption(calendar)}
+                <div className="form-group">
+                    <select className="custom-select" name="" id="selectenPhim">
+                        <option selected='Chọn phim'>Chọn ngày</option>
+                        <Fragment>
+                        {this.renderCinema()}
+                        </Fragment>
+                    </select>
+                </div>
             </Fragment>
-
         );
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        CinemaMovie: state.ThongTinrapReducer.CinemaMovie
+    }
+}
 
 
-export default OptionNgay;
+export default connect(mapStateToProps, null)(OptionNgay);

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import * as action from '../../../redux/action/Action';
 import { connect } from "react-redux";
 import FormCumRap from './FormCumRap';
+import OptionNgay from './OptionNgay';
 
 class FormFilm extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class FormFilm extends Component {
         return (
             <Fragment>
                 <div className="form-group">
-                    <select ref="movieName" onChange={(e) => { this.selectMovie() }} className="custom-select" name="" id="selectenPhim">
+                    <select ref="movieName" onChange={(e) => { this.selectMovie() }} className="custom-select" id="selectenPhim">
                         <option selected='Chọn phim'>Chọn phim</option>
                         <Fragment>
                             {this.renderForm()}
@@ -35,6 +36,7 @@ class FormFilm extends Component {
                 <Fragment>
                     <FormCumRap isSelect={this.state.optionFilm} />
                 </Fragment>
+                <OptionNgay isSelect={this.state.optionFilm} />
             </Fragment>
         );
     }

@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 
 class DetailMovie extends Component {
 
+    state = {
+        loading: false
+    }
     componentDidMount() {
         console.log(this.props.match.params.id);
         let id = this.props.match.params.id;
@@ -14,7 +17,6 @@ class DetailMovie extends Component {
 
     renderTable = () => {
         let { movie } = this.props
-        console.log(movie);
         new Date("2019-01-02T14:10:00").toLocaleTimeString();
 
         if (movie.lichChieu) {
@@ -69,6 +71,7 @@ class DetailMovie extends Component {
                                 </tr>
                             </thead>
                             <tbody>
+                            { loading && <i className='fa fa-refresh fa-sipn'></i>}
                                 {this.renderTable()}
                             </tbody>
                         </table>
