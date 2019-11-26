@@ -4,7 +4,7 @@ import Search from "../header/search";
 import { NavLink } from "react-router-dom";
 import _navbar from '../../SASS/Components/Navbar/_navbar.scss';
 import ListCarouselNavbar from "../Carousel/ListCarouselNavbar";
-
+import { Spring, config } from 'react-spring/renderprops'
 export default class Navbar extends Component {
     render() {
         return (
@@ -14,12 +14,12 @@ export default class Navbar extends Component {
                         <li className="myNav__li nav-item">
                             <NavLink className="myNav__link nav-link" to={`${'/danh-sach-phim'}`}>
                                 MUA VÉ
-                                </NavLink>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
                                 PHIM
-                                </a>
+                            </a>
                             <ul className='dropdown carouselNavbar'>
                                 <li><a className='carouselNavbar'>PHIM ĐANG CHIẾU</a></li>
                                 <li>
@@ -34,22 +34,22 @@ export default class Navbar extends Component {
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
                                 LỊCH CHIẾU
-                                </a>
+                            </a>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
                                 RẠP/GIÁ VÉ
-                                </a>
+                            </a>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">
                                 ƯU ĐÃI
-                                </a>
+                            </a>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link dienAnh nav-link" href="#">
                                 GÓC ĐIỆN ẢNH
-                                <ul className='dropdown gocDienAnh'>
+                            <ul className='dropdown gocDienAnh'>
                                     <li className="gocDienAnh"><a>THỂ LOẠI PHIM</a></li>
                                     <li className="gocDienAnh"><a>PHIM HAY THÁNG</a></li>
                                     <li className="gocDienAnh"><a>BLOG ĐIỆN ẢNH</a></li>
@@ -64,7 +64,6 @@ export default class Navbar extends Component {
                         </li>
                     </ul>
                 </nav>
-            </div>
-        )
+            </div>)
     }
 }

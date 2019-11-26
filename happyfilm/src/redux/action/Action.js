@@ -86,11 +86,10 @@ const actDetailMovieAPI = id => {
             url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
         })
             .then(result => {
-                console.log(result.data)
                 dispatch({
                     type: ActionType.LAY_CHI_TIET_PHIM,
                     movie: result.data
-                })
+                }, 1000)
             })
             .catch(err => {
                 console.log(err)
@@ -137,15 +136,15 @@ const actLichChieuPhimAPI = (id) => {
             method: "GET",
             url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`
         })
-        .then(result => {
-            dispatch({
-                type: ActionType.LAY_LICH_CHIEU_PHIM,
-                CinemaMovie: result.data
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_LICH_CHIEU_PHIM,
+                    CinemaMovie: result.data
+                })
             })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .catch(err => {
+                console.log(err)
+            })
     )
 }
 const actListRapHeThongAPI = id => {
@@ -165,4 +164,22 @@ const actListRapHeThongAPI = id => {
             })
     }
 }
-export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp,actLichChieuPhimAPI }
+// lấy danh sách phòng vé
+const actDanhSachPhongVe = id => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${id}`
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_DS_PHONG_VE,
+                    dSachLichChieu: result.data
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe }

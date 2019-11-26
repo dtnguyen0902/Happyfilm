@@ -17,6 +17,18 @@
     margin-bottom: 60px;
     }
 }
+.myPhimNavBar{
+    width: 50%;
+    margin: 5px auto 0;
+}
+.myPhimItemNavbar{
+    visibility: hidden;
+}
+.myPhim:hover{
+    .myPhimItemNavbar{
+        visibility: visible;
+    }
+}
 .myCinemaBook{
     padding: 0;
     height: 100%;

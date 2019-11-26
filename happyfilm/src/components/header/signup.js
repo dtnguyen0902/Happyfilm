@@ -4,6 +4,7 @@ import _button from '../../SASS/Function/_button.scss';
 import { NavLink } from 'react-router-dom';
 import HomePage from './../Pages/HomePage'
 import { connect } from 'react-redux';
+
 class Signup extends Component {
     constructor(props) {
         super(props);
@@ -28,12 +29,9 @@ class Signup extends Component {
     }
 
     handleOnSubmit = (event) => {
-        console.log(event)
         event.preventDefault();
-        console.log(this.state)
         //    this.props.onSubmit(this.state);
         this.props.signUp(this.state)
-        console.log(12121212);
 
 
     }
@@ -61,21 +59,21 @@ class Signup extends Component {
                                         <div className="modal-body">
                                             <div className="form-group">
                                                 <div className="input-group mb-3 w-100">
-                                                    <input type="text" name="taiKhoan" className="form-control" onChange={this.handleOnChange} placeholder="Tài Khoản" aria-describedby="basic-addon1" />
+                                                    <input type="text" name="taiKhoan" className="form-control" onChange={this.handleOnChange} placeholder="Tài Khoản" autoComplete="username" />
                                                 </div>
                                             </div>
                                             <div className="row">
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                         <div className="input-group mb-3 w-100">
-                                                            <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật khẩu" aria-describedby="basic-addon1" />
+                                                            <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật khẩu" autoComplete="new=password" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                         <div className="input-group mb-3 w-100">
-                                                            <input type="password" className="form-control" placeholder="Xác nhận mật khẩu" aria-describedby="basic-addon1" />
+                                                            <input type="password" className="form-control" placeholder="Xác nhận mật khẩu" autoComplete="new=password" />
                                                         </div>
                                                     </div>
                                                 </div>

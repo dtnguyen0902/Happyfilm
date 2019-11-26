@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Axios from 'axios';
-import Carousel from './Carousel';
-import * as action from '../../redux/action/Action';
-import { connect } from "react-redux";
 import _carousel from '../../SASS/Components/Carousel/_carousel.scss'
 import SearchPhim from "./Form/SearchPhim";
 
 class ListCarousel extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         return (
             <div id="myCarousel" className="myCarousel carousel slide" data-ride="carousel">
@@ -40,4 +39,4 @@ class ListCarousel extends Component {
 }
 
 
-export default connect(null, null)(ListCarousel);
+export default (ListCarousel);
