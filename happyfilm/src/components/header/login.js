@@ -59,7 +59,7 @@ class Login extends Component {
                                                     <div className="input-group-prepend">
                                                         <span className="input-group-text fa fa-unlock-alt" id="basic-addon1"></span>
                                                     </div>
-                                                    <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật Khẩu" aria-describedby="basic-addon1" />
+                                                    <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật Khẩu" aria-describedby="basic-addon1" autoComplete="new-password"/>
                                                 </div>
                                             </div>
                                         </div>

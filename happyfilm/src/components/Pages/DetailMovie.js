@@ -6,6 +6,7 @@ class DetailMovie extends Component {
     componentDidMount() {
         let id = this.props.match.params.id;
         this.props.detailMovie(id);
+        window.scrollTo(0, 0)
     }
     renderTable = () => {
         let { movie } = this.props;

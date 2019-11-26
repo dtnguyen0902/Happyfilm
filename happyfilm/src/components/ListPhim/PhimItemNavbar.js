@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import _phimitems from '../../SASS/Components/Listphim/_phimitems.scss';
 
 
@@ -13,6 +14,13 @@ class PhimItemsNavbar extends Component {
                     <div className="card-body">
                         <h6 className="myPhim__Name card-title">{movie.tenPhim}</h6>
                         <p className='myPhim_moTaNavbar'>{movie.moTa}</p>
+                        <div className="card__content myPhimItemNavbar">
+                            <div className="card__button">
+                                <div className='row'>
+                                    <NavLink type="button" className="btn btn-danger btn-block myPhimNavBar" to={`lich-chieu-theo-phim/${movie.maPhim}`}>Mua Vé</NavLink>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

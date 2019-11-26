@@ -5,20 +5,20 @@ import { NavLink } from "react-router-dom";
 export default class Logo extends Component {
     render() {
         return (
-            <div className='row align-items-center'>
-                <div>
-                    <NavLink to='/' className="navbar-brand">
-                        <img
-                            className="headerImg navbar-brand" src="../img/logo_happyfilm_nobg.png"
-                        />
-                    </NavLink>
+            <div>
+                <div className='row align-items-center'>
+                    <div>
+                        <NavLink to='/' className="navbar-brand">
+                            <img
+                                className="headerImg navbar-brand" src="../img/logo_happyfilm_nobg.png"
+                            />
+                        </NavLink>
+                    </div>
+                    <div>
+                        <h3 className='happyfilm'>Happy Film</h3>
+                    </div>
                 </div>
-                <div>
-                    <h3 className='happyfilm'>Happy Film</h3>
-                </div>
-
             </div>
-
         )
     }
 }

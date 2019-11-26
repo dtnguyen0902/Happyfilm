@@ -5,8 +5,10 @@ import BranchLogo from './BranchLogo';
 import 'react-tabs/style/react-tabs.css';
 
 class Branch extends Component {
-    componentDidMount(){
-        this.props.layThongTinrap()
+
+    componentDidMount() {
+        this.props.layThongTinrap();
+            window.scrollTo(0, 0)
     }
     renderRap = () => {
         return this.props.ListRaps.map((item, index) => {
@@ -18,7 +20,7 @@ class Branch extends Component {
     render() {
         return (
             <div className='container px-0'>
-            {this.renderRap()}
+                {this.renderRap()}
             </div>
         )
     }

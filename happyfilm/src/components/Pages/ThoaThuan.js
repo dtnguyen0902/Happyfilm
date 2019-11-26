@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import ListPhimCol4 from '../ListPhim/ListPhimCol4';
 
 class ThoaThuan extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         return (
             <div className='container'>

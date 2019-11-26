@@ -15,8 +15,8 @@ class PhimItems extends Component {
             <div className="card__content myMovieNavlink">
               <div className="card__button">
                 <div className='row'>
-                    <NavLink className='btn btn-info myNavlink' to={`/chi-tiet-phim/${movie.maPhim}`}>Xem chi tiết</NavLink>
-                  <button type="button" className="btn btn-danger btn-block myNavlink">Mua Vé</button>
+                  <NavLink className='btn btn-info myNavlink' to={`/chi-tiet-phim/${movie.maPhim}`}>Xem chi tiết</NavLink>
+                  <NavLink type="button" className="btn btn-danger btn-block myNavlink" to={`lich-chieu-theo-phim/${movie.maPhim}`}>Mua Vé</NavLink>
                 </div>
               </div>
             </div>

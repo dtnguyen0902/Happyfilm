@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import HomePage from "./components/Pages/HomePage";
 import HomePageLogin from "./components/Pages/HomePageLogin";
 import LichChieuCinema from "./components/Pages/LichChieuCinema";
@@ -17,10 +17,9 @@ import Facebook from './components/Pages/Facebook';
 import Google from './components/Pages/Google';
 import Instagram from './components/Pages/Instagram';
 import ListBranch from "./components/Branch-cinema/ListBranch";
-import DatVe from "./components/Pages/DatVe";
 import LichChieuCinemaMovie from "./components/Pages/LichChieuCinemaMovie";
-import Booking from "./components/Pages/Booking";
 import TotalMovie from "./components/ListPhim/TotalMovie";
+import BoxOffice from './components/Pages/BoxOffice';
 
 const DetailMovie = React.lazy(()=> import ('./components/Pages/DetailMovie'));
 
@@ -136,9 +135,9 @@ const routerHome = [
         component: TotalMovie
     },
     {
-        path: "/dat-ve/:id",
+        path: "/danh-sach-cho-ngoi/:id",
         exact: false,
-        component: Booking
+        component: BoxOffice
     },
 ]
 

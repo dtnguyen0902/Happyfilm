@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import ListBranch from '../Branch-cinema/ListBranch';
 import * as action from '../../redux/action/Action';
 import { NavLink } from "react-router-dom";
@@ -13,7 +13,7 @@ class LichChieuCinemaMovie extends Component {
     componentDidMount() {
         let id = this.props.match.params.id;
         this.props.detailCinemaMovie(id);
-        console.log(this.props)
+        window.scrollTo(0, 0)
     }
     renderCinemaMovie = () => {
         let { CinemaMovie } = this.props;
@@ -36,7 +36,7 @@ class LichChieuCinemaMovie extends Component {
                                                 {item.lichChieuPhim.map((item, index) => {
                                                     return (
                                                         <div className="card bg-dark" style={{ width: '8' }} key={index}>
-                                                            <NavLink className="card-body px-2 py-2 bookVe" to={`/dat-ve/${item.maLichChieu}`}>
+                                                            <NavLink className="card-body px-2 py-2 bookVe" to={`/danh-sach-cho-ngoi/${item.maLichChieu}`}>
                                                                 <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
                                                                 <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
                                                             </NavLink>

@@ -9,7 +9,7 @@ class LocationCinema extends Component {
     //     }
     // }
     componentDidMount() {
-        console.log(this.props)
+        window.scrollTo(0, 0)
     }
     renderCinema = () => {
         return this.props.ListCinemas.map((item, index) => {
