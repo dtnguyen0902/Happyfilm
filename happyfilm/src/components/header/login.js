@@ -26,15 +26,18 @@ class Login extends Component {
     handleOnSubmit = event => {
         event.preventDefault();
         this.props.login(this.state);
-        
+        document.querySelector("body > div.modal-backdrop.show").remove();
+        document.querySelector("body").classList.remove("modal-open");
     }
+   
     render() {
         return (
             <div>
                 <button type="button" className="myButton" data-toggle="modal" data-target="#myLogin">
                     ĐĂNG NHẬP
                     </button>
-                <div className="modal fade" id="myLogin" tabIndex={-1} role="dialog" aria-hidden="true">
+               
+                <div className="modal" id="myLogin" tabIndex={-1} role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable" role="document">
                         <div className="modal-content">
                             <div className="modal-header text-center">

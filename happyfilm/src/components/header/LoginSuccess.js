@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
+import { connect } from 'react-redux'
+import *as  action from '../../redux/action/Action';
+
 class LoginSuccess extends Component {
 
-
+  logOut = () => {
+    
+  }
   render() {
     const { user } = this.props;
     return (
@@ -11,11 +16,18 @@ class LoginSuccess extends Component {
           {user.taiKhoan}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <NavLink className="dropdown-item" to={"/"} >Logout</NavLink>
+          <NavLink onClick={this.logOut} className="dropdown-item" to={"/"} >Logout</NavLink>
         </div>
       </div>
     )
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    actLogin:user=>{
+      dispatch(action.actLogin(user))
+   }
+  }
+}
 
-export default LoginSuccess
+export default connect(null,mapDispatchToProps)(LoginSuccess)
