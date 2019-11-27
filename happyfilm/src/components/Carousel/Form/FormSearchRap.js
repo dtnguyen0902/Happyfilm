@@ -9,9 +9,6 @@ class FormSearchRap extends Component {
         return (
             <div>
                 <FormRap />
-                <FormFilm />
-                <FormNgay />
-                <FormSuat />
             </div>
         );
     }

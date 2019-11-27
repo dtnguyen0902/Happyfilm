@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
+import PhimItems from './PhimItems';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
-import PhimItemSearch from './PhimItemSearch';
 
-class ListPhimSearch extends Component {
-    componentDidMount() {
-        window.scrollTo(0, 0)
-    }
+class TotalMovie extends Component {
     renderSource = () => {
         let { ListFilms } = this.props;
         return ListFilms.map((item, index) => {
             return (
-                <PhimItemSearch key={index} movie={item} />
+                <PhimItems key={index} movie={item} />
             )
         })
     }
@@ -20,13 +17,14 @@ class ListPhimSearch extends Component {
     }
     render() {
         return (
-            <div className="container px-0">
-                {this.renderSource()}
+            <div className='container'>
+                <div className='row'>
+                    {this.renderSource()}
+                </div>
             </div>
         );
     }
 }
-
 const mapDispatchToProps = dispatch => {
     return {
         layDuLieu: () => {
@@ -39,5 +37,4 @@ const mapStateToProps = state => {
         ListFilms: state.movieReducer.ListFilms
     }
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(ListPhimSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(TotalMovie);

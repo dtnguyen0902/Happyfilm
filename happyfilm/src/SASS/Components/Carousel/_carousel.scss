@@ -1,3 +1,5 @@
+@import '../../Helper/variable';
+
 .myCarousel__ol .myCarousel__li {
     height: 15px;
     width: 15px;
@@ -6,4 +8,7 @@
 }
 .myCarousel__inner .myCarousel__item{
     display: block;
+}
+.myModal{
+    background-color: $color-grey;
 }

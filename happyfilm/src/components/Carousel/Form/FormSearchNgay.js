@@ -11,7 +11,7 @@ class FormSearchNgay extends Component {
                 <FormNgay />
                 <FormFilm />
                 <FormRap />
-                <FormSuat />
+   
             </div>
         );
     }

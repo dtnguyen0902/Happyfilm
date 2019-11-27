@@ -3,6 +3,9 @@ import Branch from './branch';
 import ListPhimSearch from '../ListPhim/ListPhimSearch';
 import __myBranch from '../../SASS/Components/Branch/__myBranch.scss';
 class ListBranch extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         return (
             <div>

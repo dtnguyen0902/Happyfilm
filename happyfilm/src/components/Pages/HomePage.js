@@ -3,14 +3,14 @@ import ListCarousel from '../Carousel/ListCarousel';
 import ListPhim from '../ListPhim/ListPhim';
 import Sticker from '../IconSticker.js/Sticker';
 import Promotion from '../Promotion/promotion';
-import Header from '../header/header';
-import Navbar from '../Navbar/navbar';
+
 class HomePage extends Component {
-    render() {
-        console.log(this.props)
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+    render() {      
         return (
             <div>
-                
                 <ListCarousel />
                 <ListPhim />
                 <Sticker />

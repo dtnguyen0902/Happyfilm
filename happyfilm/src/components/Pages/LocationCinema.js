@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
-import ListCarousel from '../Carousel/ListCarousel';
-import Branch from '../Branch-cinema/branch';
-import ListPhim from '../ListPhim/ListPhim';
-import Promotion from '../Promotion/promotion';
-import DienAnh from '../News/DienAnh';
-import queryString from 'query-string'
-
 
 class LocationCinema extends Component {
     // componentWillReceiveProps(nextProps) {
@@ -16,7 +9,7 @@ class LocationCinema extends Component {
     //     }
     // }
     componentDidMount() {
-        console.log(this.props)
+        window.scrollTo(0, 0)
     }
     renderCinema = () => {
         return this.props.ListCinemas.map((item, index) => {
@@ -36,7 +29,6 @@ class LocationCinema extends Component {
     render() {
         return (
             <div>
-
                 <div className='row'>
                     <tr>
                         {this.renderCinema()}
