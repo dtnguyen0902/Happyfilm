@@ -10,7 +10,8 @@ const rootReducers = combineReducers(
         movieReducer,
         ThongTinrapReducer,
         lichChieuReducer,
-        clientReducer
+        clientReducer,
+      
     }
 )
 export default rootReducers;

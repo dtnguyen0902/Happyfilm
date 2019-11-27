@@ -12,10 +12,6 @@ const actsingUp = (user) => {
             .then(result => {
                 console.log(result.data);
                 alert('dang ky thanh cong')
-                // Chỗ này sai nha, sau khi dk xong 
-                // anh phải gọi 1 action nhận kết quả đúng
-                // trả về reducer 
-                // dispatch(actsingUp(user));
             })
             .catch(error => {
                 console.log(error);
@@ -163,7 +159,35 @@ const actListRapHeThongAPI = id => {
                 console.log(error)
             })
     }
+
+ 
 }
+
+
+const actdatVePhimAPI=thongTinDatVe=>{
+    return dispatch=>{
+        Axios ({
+            method:'POST',
+            url:'http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe',
+            data:thongTinDatVe,
+            headers:{
+                'Authorization' :'Bearer' + localStorage.getItem('accessToken')
+            }
+        })
+        .then(result=>{
+            dispatch({
+                type:ActionType.DAT_VE_PHIM,
+                danhSachGhe:result.data
+            })
+
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+}   
+export {actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp,actLichChieuPhimAPI }
+
 // lấy danh sách phòng vé
 const actDanhSachPhongVe = id => {
     return dispatch => {
@@ -183,3 +207,4 @@ const actDanhSachPhongVe = id => {
     }
 }
 export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe }
+
