@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 import PhimItemSearch from './PhimItemSearch';
 
 class ListPhimSearch extends Component {
-    componentDidMount() {
-        window.scrollTo(0, 0)
-    }
+
     renderSource = () => {
         let { ListFilms } = this.props;
         return ListFilms.map((item, index) => {
@@ -17,6 +15,7 @@ class ListPhimSearch extends Component {
     }
     componentDidMount() {
         this.props.layDuLieu();
+        window.scrollTo(0, 0)
     }
     render() {
         return (

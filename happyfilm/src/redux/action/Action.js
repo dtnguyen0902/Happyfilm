@@ -27,18 +27,14 @@ const actLogin = (user) => {
             data: user
         })
             .then(result => {
-                console.log(result.data);
                 dispatch({
                     type: ActionType.CLIENT_LOGIN,
                     user: result.data
                 })
                 localStorage.setItem('accessToken', result.data.accessToken);
-                alert("Dang Nhap Thanh Cong")
-
             })
             .catch(error => {
                 console.log(error);
-                alert("Vui long Nhap Lai")
             })
     }
 }
@@ -159,34 +155,29 @@ const actListRapHeThongAPI = id => {
                 console.log(error)
             })
     }
-
- 
 }
-
-
-const actdatVePhimAPI=thongTinDatVe=>{
-    return dispatch=>{
-        Axios ({
-            method:'POST',
-            url:'http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe',
-            data:thongTinDatVe,
-            headers:{
-                'Authorization' :'Bearer' + localStorage.getItem('accessToken')
+const actdatVePhimAPI = thongTinDatVe => {
+    return dispatch => {
+        Axios({
+            method: 'POST',
+            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe',
+            data: thongTinDatVe,
+            headers: {
+                'Authorization': 'Bearer' + localStorage.getItem('accessToken')
             }
         })
-        .then(result=>{
-            dispatch({
-                type:ActionType.DAT_VE_PHIM,
-                danhSachGhe:result.data
-            })
+            .then(result => {
+                dispatch({
+                    type: ActionType.DAT_VE_PHIM,
+                    danhSachGhe: result.data
+                })
 
-        })
-        .catch(error=>{
-            console.log(error)
-        })
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
-}   
-export {actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp,actLichChieuPhimAPI }
+}
 
 // lấy danh sách phòng vé
 const actDanhSachPhongVe = id => {
@@ -206,5 +197,5 @@ const actDanhSachPhongVe = id => {
             })
     }
 }
-export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe }
+export { actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe }
 

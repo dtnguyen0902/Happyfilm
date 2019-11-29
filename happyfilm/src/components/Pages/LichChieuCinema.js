@@ -8,6 +8,7 @@ class LichChieuCinema extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
             this.props.detailCinema(nextProps.match.params.id)
+            window.scrollTo(0, 0)
         }
     }
     componentDidMount() {
@@ -19,7 +20,7 @@ class LichChieuCinema extends Component {
         return this.props.Cinema.map((item, index) => {
             return (
                 <div key={index}>
-                    <Fragment className="card bg-dark container">
+                    <div className="card bg-dark container">
                         {item.lstCumRap.map((item, index) => {
                             return (
                                 <div key={index}>
@@ -56,7 +57,7 @@ class LichChieuCinema extends Component {
                                 </div>
                             )
                         })}
-                    </Fragment>
+                    </div>
                 </div>
             )
         })

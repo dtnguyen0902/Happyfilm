@@ -20,6 +20,7 @@ import ListBranch from "./components/Branch-cinema/ListBranch";
 import LichChieuCinemaMovie from "./components/Pages/LichChieuCinemaMovie";
 import TotalMovie from "./components/ListPhim/TotalMovie";
 import BoxOffice from './components/Pages/BoxOffice';
+import ChooseCinema from './components/ListPhim/ChooseCinema';
 
 const DetailMovie = React.lazy(()=> import ('./components/Pages/DetailMovie'));
 

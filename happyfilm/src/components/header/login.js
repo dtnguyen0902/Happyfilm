@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import _button from '../../SASS/Function/_button.scss';
 import * as action from './../../redux/action/Action';
 import { connect } from 'react-redux';
-import LoginSuccess from './LoginSuccess';
-
+import logo from '../../img/logo_happyfilm_nobg.png';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -29,20 +28,19 @@ class Login extends Component {
         document.querySelector("body > div.modal-backdrop.show").remove();
         document.querySelector("body").classList.remove("modal-open");
     }
-   
+
     render() {
         return (
             <div>
                 <button type="button" className="myButton" data-toggle="modal" data-target="#myLogin">
                     ĐĂNG NHẬP
                     </button>
-               
                 <div className="modal" id="myLogin" tabIndex={-1} role="dialog" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable" role="document">
                         <div className="modal-content myModal">
                             <div className="modal-header text-center">
                                 <h5 className="modal-title">
-                                    <img src="./img/logo_happyfilm_nobg.png" alt="First slide" width="20%" height="20%" className="rounded-circle" />
+                                    <img src={logo} alt="logo_happyfilm_nobg" width="20%" height="20%" className="rounded-circle bgLogo" />
                                 </h5>
                             </div>
                             <div className="modal-body">
@@ -62,7 +60,7 @@ class Login extends Component {
                                                     <div className="input-group-prepend">
                                                         <span className="input-group-text fa fa-unlock-alt" id="basic-addon1"></span>
                                                     </div>
-                                                    <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật Khẩu" aria-describedby="basic-addon1" autoComplete="new-password"/>
+                                                    <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật Khẩu" aria-describedby="basic-addon1" autoComplete="new-password" />
                                                 </div>
                                             </div>
                                         </div>
