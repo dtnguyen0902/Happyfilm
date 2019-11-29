@@ -10,7 +10,7 @@ ul.myBranchForm li a.myBranchForm.active{
 }
 ul.myBranch{
     background-color: $color-grey;
-    width: 60%;
+    width: 74%;
     padding: 0 ;
     margin-left: 0;
     margin-top: 40px;
@@ -53,10 +53,14 @@ ul li a.myBranch:hover{
     white-space: nowrap;
     text-align: center;
 }
+.myCinema{
+    padding-left: 100px;
+}
 .borderCinema{
     border: 1px solid $color-mint;
     margin-top: 30px;
     width: 100%;
+    background-color: $color-grey;
 }
 
 .lichChieuCinema{
@@ -85,7 +89,7 @@ ul li a.myBranch:hover{
 .bookVe{
     background-color: $color-grey;
     color: $color-white;
-    border: 1px solid $color-white;
+    border: 1px solid $color-mint;
     padding: 10px;
     font-size: 14px;
 }

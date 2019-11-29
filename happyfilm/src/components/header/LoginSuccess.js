@@ -6,17 +6,20 @@ import *as  action from '../../redux/action/Action';
 class LoginSuccess extends Component {
 
   logOut = () => {
-    
+    localStorage.clear();
+    window.location.href = '/';
   }
   render() {
     const { user } = this.props;
     return (
       <div className="dropdown">
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {user.taiKhoan}
+          Hello: {user.taiKhoan}
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <NavLink onClick={this.logOut} className="dropdown-item" to={"/"} >Logout</NavLink>
+          <button className="dropdown-item">Cập nhật thông tin</button>
+          <button className="dropdown-item">Thay đổi mật khẩu</button>
+          <button onClick={this.logOut} className="dropdown-item">Logout</button>
         </div>
       </div>
     )
@@ -24,10 +27,10 @@ class LoginSuccess extends Component {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    actLogin:user=>{
+    actLogin: user => {
       dispatch(action.actLogin(user))
-   }
+    }
   }
 }
 
-export default connect(null,mapDispatchToProps)(LoginSuccess)
+export default connect(null, mapDispatchToProps)(LoginSuccess)
