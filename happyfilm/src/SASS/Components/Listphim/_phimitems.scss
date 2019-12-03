@@ -1,25 +1,25 @@
 @import '../../Helper/variable';
 
 .myPhim{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 4;
     display: table-header-group;
-    
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 .myPhim:hover{
-    background-color: rgba(0,0, 0, 0.2);
+    transform: translate3d(20px,-30px,40px);
+    transition: .5s;
     .myPhim_moTa{
         display: none;
     }
     .myMovieNavlink{
-    visibility: visible;
     margin-bottom: 60px;
+    visibility: visible;
     }
 }
 .myPhimNavBar{
-    width: 50%;
     margin: 5px auto 0;
+    width: 50%;
 }
 .myPhimItemNavbar{
     visibility: hidden;
@@ -30,48 +30,48 @@
     }
 }
 .myCinemaBook{
-    padding: 0;
     height: 100%;
-    width: 100%;
     margin: 0;
     margin-top: 10px;
+    padding: 0;
+    width: 100%;
 }
 .myPhim__Name{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-box-orient: vertical;  
-    letter-spacing: 4;
-    font-size: $fs-2;
-    font-weight: 500;
     font-family: 'PT Serif', serif;
+    font-size: $fs-2;
+    font-weight: 500;  
+    letter-spacing: 4;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .myPhim_moTa{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-box-orient: vertical;  
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;  
 }
 .myPhim_moTaNavbar{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-box-orient: vertical;  
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;  
 }
 .myCard {
     color: $color-black;
-    width: 255px;
     height: 440px;
+    width: 255px;
 }
 .myMovieNavlink{
     visibility: hidden;
 }
 .myNavlink{
-    width: 100%;
     margin: 2px 40px;
+    width: 100%;
 }
 
 .myCardNavbar{

@@ -1,0 +1,28 @@
+@import "../../Helper//variable";
+.promotionImg img{
+    margin: 40px 0;
+    width: 250px;
+}
+.promotionImg:hover{
+    transform: translate3d(20px,-30px,40px);
+    transition: .5s;
+}
+ul.myPromotion li.myPromotion a.myPromotion{
+    background-color: $color-mint;
+    color: $color-grey;
+}
+.items-overlay{
+    opacity: 1;
+}
+.promotionImg:hover .items{
+    background-color: saddlebrown;
+}
+.detailabout{
+    padding: 10px 0;
+    padding-top: 20px;
+}
+.detailabout strong{
+    color: $color-grey;
+    background-color: $color-mint;
+    padding: 2px;
+}

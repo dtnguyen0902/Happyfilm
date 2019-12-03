@@ -4,7 +4,7 @@ import Search from "../header/search";
 import { NavLink } from "react-router-dom";
 import _navbar from '../../SASS/Components/Navbar/_navbar.scss';
 import ListCarouselNavbar from "../Carousel/ListCarouselNavbar";
-import { Spring, config } from 'react-spring/renderprops'
+
 export default class Navbar extends Component {
     render() {
         return (
@@ -48,14 +48,7 @@ export default class Navbar extends Component {
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link dienAnh nav-link" href="#">
-                                GÓC ĐIỆN ẢNH
-                            <ul className='dropdown gocDienAnh'>
-                                    <li className="gocDienAnh"><a>THỂ LOẠI PHIM</a></li>
-                                    <li className="gocDienAnh"><a>PHIM HAY THÁNG</a></li>
-                                    <li className="gocDienAnh"><a>BLOG ĐIỆN ẢNH</a></li>
-                                    <li className="gocDienAnh"><a>BÌNH LUẬN PHIM</a></li>
-                                </ul>
-                            </a>
+                                GÓC ĐIỆN ẢNH</a>
                         </li>
                         <li className="nav-item">
                             <a className="myNav__link nav-link" href="#">

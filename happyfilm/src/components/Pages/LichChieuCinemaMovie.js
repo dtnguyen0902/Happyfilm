@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ListBranch from '../Branch-cinema/ListBranch';
 import * as action from '../../redux/action/Action';
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import ChooseCinema from '../ListPhim/ChooseCinema';
 
@@ -55,12 +54,12 @@ class LichChieuCinemaMovie extends Component {
 
     render() {
         return (
-            <div className='myCinema container-fluid' >
+            <div className='container-fluid' >
                 <div className='row'>
                     <div className='col-3 px-0'>
                         <ListBranch />
                     </div>
-                    <div className='col-3'>
+                    <div className='col-3 px-5'>
                         <ul className="nav nav-pills container myBranch" id="pills-tab" role="tablist">
                             <li className="nav-item myBranch">
                                 <a className="nav-link active myBranch" id="pills-home-tab" data-toggle="pill" href="#chonPhim" role="tab" aria-controls="pills-home" aria-selected="true">CHỌN RẠP</a>

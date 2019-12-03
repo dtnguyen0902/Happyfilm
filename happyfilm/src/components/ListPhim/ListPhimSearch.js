@@ -19,8 +19,12 @@ class ListPhimSearch extends Component {
     }
     render() {
         return (
-            <div className="container px-0">
-                {this.renderSource()}
+            <div className="myCinema container-fluid">
+                <div className='row'>
+                    <div className='col-3 px-0'>
+                        {this.renderSource()}
+                    </div>
+                </div>
             </div>
         );
     }

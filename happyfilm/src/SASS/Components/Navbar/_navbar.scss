@@ -1,3 +1,4 @@
+
 @import "../../Helper/variable";
 
 .mynavBg{
@@ -6,22 +7,23 @@
 .myNav__ul {
     background-color: $color-mint;
 }
+
 ul{
-    padding: 0;
-    list-style: none;
     background: $color-grey;
+    list-style: none;
+    padding: 0;
 }
 ul li{
     display: inline-block;
-    position: relative;
     line-height: 21px;
+    position: relative;
     text-align: left;
 }
 ul li a{
-    display: block;
     color: $color-grey;
-    text-decoration: none;
+    display: block;
     padding: 20px;
+    text-decoration: none;
 }
 ul li a:hover{
     color: $color-grey;
@@ -30,25 +32,25 @@ ul li a:hover{
 ul li ul.dropdown{
     background:  $color-grey;
     display: none;
+    left: 0;
     position: absolute;
     z-index: 999;
-    left: 0;
 }
 ul li ul.dropdown.gocDienAnh{
-    width: 180px;
     background:  $color-grey;
     display: none;
-    position: absolute;
-    z-index: 999;
     left: 0;
+    position: absolute;
+    width: 180px;
+    z-index: 999;
 }
 
 ul li ul.dropdown li{
     width: 100%;
 }
 ul li ul.dropdown .carouselNavbar{
-    width: 1000px;
     height: 100%;
+    width: 1000px;
     
 }
 ul li a.carouselNavbar{
@@ -72,8 +74,8 @@ ul li ul.dropdown li{
 }
 
 .myNav .myNav__ul .myNav__link {
-    line-height: $line-height-0;
     font-weight: 500 ;
+    line-height: $line-height-0;
 }
 .gocDienAnh__ul{
     display: none;

@@ -39,7 +39,6 @@ class ChooseCinema extends Component {
         }
     }
     render() {
-        console.log(this.props.isChoosenCinema)
         return (
             <div>
                 <ul className="nav nav-pills container myBranch" id="pills-tab" role="tablist">
