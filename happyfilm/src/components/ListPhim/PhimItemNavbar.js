@@ -17,7 +17,7 @@ class PhimItemsNavbar extends Component {
                         <div className="card__content myPhimItemNavbar">
                             <div className="card__button">
                                 <div className='row'>
-                                    <NavLink type="button" className="btn btn-danger btn-block myPhimNavBar" to={`lich-chieu-theo-phim/${movie.maPhim}`}>Mua Vé</NavLink>
+                                    <NavLink className="btn btn-danger myPhimNavBar" to={`lich-chieu-theo-phim/${movie.maPhim}`}>Mua Vé</NavLink>
                                 </div>
                             </div>
                         </div>

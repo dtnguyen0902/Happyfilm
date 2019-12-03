@@ -10,18 +10,29 @@ ul.myBranchForm li a.myBranchForm.active{
 }
 ul.myBranch{
     background-color: $color-grey;
-    width: 74%;
-    padding: 0 ;
-    margin-left: 0;
-    margin-top: 40px;
     margin-bottom: 10px;
+    margin-left: 80px;
+    margin-top: 40px;
+    padding: 0 ;
+    width: 74%;
+}
+ul.myBranchLogo{
+    background-color: $color-grey;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0 ;
+    width: 74%;
+}
+ul.myBranchLogo li.myBranchLogo a.myBranchLogo{
+    background-color: $color-mint;
+    color: $color-grey;
 }
 ul.myBranchForm{
-    
-    padding: 0 ;
+    margin-bottom: 10px !important;
     margin-left: 0;
     margin-top: 40px;
-    margin-bottom: 10px !important;
+    padding: 0 ;
 }
 ul li a.myBranch,ul li a.myBranchForm{
     color: $color-mint;
@@ -30,50 +41,50 @@ ul li a.myBranch:hover{
     color: $color-mint;
 }
 .myPhimCinema{
-    font-size: 40px;
-    font-family: 'Playball', cursive;
-    letter-spacing: 2;
     border: 1px solid $color-mint;
-    padding: 10px;
-    width: 40%;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    font-family: 'Playball', cursive;
+    font-size: 40px;
+    letter-spacing: 2;
     -webkit-line-clamp: 1;
-    white-space: nowrap;
     margin-left: 70px;
+    overflow: hidden;
+    padding: 10px;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 40%;
 }
 .myPhimCinemaMovie{
+    border: 1px solid $color-mint;
     font-size: 40px;
     letter-spacing: 2;
-    border: 1px solid $color-mint;
-    padding: 10px;
-    text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+    padding: 10px;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .myCinema{
     padding-left: 100px;
 }
 .borderCinema{
+    background-color: $color-grey;
     border: 1px solid $color-mint;
     margin-top: 30px;
     width: 100%;
-    background-color: $color-grey;
 }
 
 .lichChieuCinema{
     background-color: $color-grey;
-    color: $color-mint;
     border: 1px solid $color-mint;
-    padding: 10px;
+    color: $color-mint;
     font-size: 14px;
+    padding: 10px;
 }
 .lichChieuCinema:hover,.bookVe:hover{
-    text-decoration: none;
     background-color: $color-mint;
     color: $color-grey;
+    text-decoration: none;
 }
 .lichChieuCinema.active{
     background-color: $color-white;
@@ -81,41 +92,41 @@ ul li a.myBranch:hover{
 }
 .bookingVe{
     background-color: $color-grey;
-    color: $color-white;
     border: 1px solid $color-mint;
-    padding: 10px;
+    color: $color-white;
     font-size: 14px;
+    padding: 10px;
 }
 .bookVe{
     background-color: $color-grey;
-    color: $color-white;
     border: 1px solid $color-mint;
-    padding: 10px;
+    color: $color-white;
     font-size: 14px;
+    padding: 10px;
 }
 .bookingVe .bookingVeactive{
     background-color: $color-mint;
     color: $color-grey;
 }
 .bookingVeactive:hover{
-    text-decoration: none;
     background-color: $color-mint;
     color: $color-grey;
+    text-decoration: none;
 }
 .bookingVebg,.bookingVebgposition{
     background-color: $color-grey;
     border: 1px solid $color-mint;
 }
 .bookingVebgposition{
-    position: fixed;
-    z-index: 999;
     height: 550px;
     margin-left: 80px;
     padding-right: 0;
+    position: fixed;
+    z-index: 999;
 }
-.bookingVe .bookingVedis:disabled{
+.bookingVe .bookingVedis{
     background-color: $color-grey;
-    color: $color-grey;
+    color: $color-mint;
 }
 .bookingVe .bookingVeactive:focus{
     outline: none;

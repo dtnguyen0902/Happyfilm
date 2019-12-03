@@ -10,7 +10,7 @@ class ListBranch extends Component {
     render() {
         return (
             <Fragment>
-                <div className='container px-0'>
+                <Fragment>
                     <ul className="nav nav-pills container myBranch" id="pills-tab" role="tablist">
                         <li className="nav-item myBranch">
                             <a className="nav-link active myBranch" id="pills-home-tab" data-toggle="pill" href="#chonPhim" role="tab" aria-controls="pills-home" aria-selected="true">THEO PHIM</a>
@@ -19,7 +19,7 @@ class ListBranch extends Component {
                             <a className="nav-link myBranch" id="pills-profile-tab" data-toggle="pill" href="#chonRap" role="tab" aria-controls="pills-profile" aria-selected="false" name='PHIM SẮP CHIẾU'>THEO RẠP</a>
                         </li>
                     </ul>
-                </div>
+                </Fragment>
                 <div className="tab-content" id="pills-tabContent">
                     <div className="tab-pane fade show active" id="chonPhim" role="tabpanel" aria-labelledby="pills-home-tab">
                         <ListPhimSearch />

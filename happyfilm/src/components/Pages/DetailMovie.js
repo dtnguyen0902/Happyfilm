@@ -29,14 +29,13 @@ class DetailMovie extends Component {
     }
     render() {
         let { movie } = this.props;
-        console.log(movie)
         return (
             <div className='container'>
                 <div className='row'>
                     <div className='col-8'>
                         <div className='row'>
                             <div className='col-6'>
-                                <img src={movie.hinhAnh} alt=""></img>
+                                <img src={movie.hinhAnh} alt={movie.tenPhim} width={300} height={400}></img>
                             </div>
                             <div className='col-6'>
                                 <table className='table'>

@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import * as action from '../../../redux/action/Action';
 import { connect } from "react-redux";
 import FormCumRap from './FormCumRap';
 import OptionNgay from './OptionNgay';
@@ -26,8 +25,8 @@ class FormFilm extends Component {
         return (
             <Fragment>
                 <div className="form-group">
-                    <select ref="movieName" onChange={(e) => { this.selectMovie() }} className="custom-select" id="selectenPhim">
-                        <option selected='Chọn phim'>Chọn phim</option>
+                    <select ref="movieName" defaultValue={'DEFAULT'} onChange={(e) => { this.selectMovie() }} className="custom-select" id="selectenPhim">
+                        <option selected='Chọn phim' value="default">Chọn phim</option>
                         <Fragment>
                             {this.renderForm()}
                         </Fragment>

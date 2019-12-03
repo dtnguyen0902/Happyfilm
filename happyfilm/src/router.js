@@ -1,6 +1,5 @@
-import React  from 'react';
+import React from 'react';
 import HomePage from "./components/Pages/HomePage";
-import HomePageLogin from "./components/Pages/HomePageLogin";
 import LichChieuCinema from "./components/Pages/LichChieuCinema";
 import About from "./components/Pages/About";
 import ThoaThuan from './components/Pages/ThoaThuan';
@@ -20,9 +19,8 @@ import ListBranch from "./components/Branch-cinema/ListBranch";
 import LichChieuCinemaMovie from "./components/Pages/LichChieuCinemaMovie";
 import TotalMovie from "./components/ListPhim/TotalMovie";
 import BoxOffice from './components/Pages/BoxOffice';
-import ChooseCinema from './components/ListPhim/ChooseCinema';
 
-const DetailMovie = React.lazy(()=> import ('./components/Pages/DetailMovie'));
+const DetailMovie = React.lazy(() => import('./components/Pages/DetailMovie'));
 
 const routerHome = [
     {
@@ -31,11 +29,6 @@ const routerHome = [
         component: HomePage
     },
     {
-        path: "/homepage-login",
-        exact: false,
-        component: HomePageLogin
-    }
-    , {
         path: "/detail-movie/:id",
         exact: false,
         component: DetailMovie
