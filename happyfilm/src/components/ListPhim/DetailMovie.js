@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import *as  action from './../../redux/action/Action';
 import { connect } from 'react-redux';
 import { Trail } from 'react-spring/renderprops'
-import { useSpring, animated } from 'react-spring'
-import { Spring,config } from 'react-spring/renderprops'
+import { Spring,config } from 'react-spring/renderprops';
+
+
 class DetailMovie extends Component {
     state = {
         loading: false
@@ -15,11 +16,9 @@ class DetailMovie extends Component {
     renderTable = () => {
         let { movie } = this.props
         new Date("2019-01-02T14:10:00").toLocaleTimeString();
-
         if (movie.lichChieu) {
             return movie.lichChieu.map((item, index) => {
                 return (
-
                     <Trail items={items} keys={item.key} from={{ transform: 'translate3d(0,-40px,0)' }} to={{ transform: 'translate3d(0,0px,0)' }}>
                         {item => props => <span style={props}>
                             <tr>
@@ -30,7 +29,6 @@ class DetailMovie extends Component {
                             </tr>
                         </span>}
                     </Trail>
-
                 );
             })
         }

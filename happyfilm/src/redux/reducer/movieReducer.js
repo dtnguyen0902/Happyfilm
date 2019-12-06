@@ -10,13 +10,12 @@ const movieReducer = (state = initState, action) => {
         case ActionType.LAY_DATA:
             state.ListFilms = action.ListFilm;
             return { ...state }
-        case ActionType.LAY_TRAILER:
-            {
-                let ListFilms = action.ListFilm;
-                return { ListFilms }
-            }
         case ActionType.LAY_CHI_TIET_PHIM:
             state.movie = action.movie;
+            return { ...state }
+
+        case ActionType.FILTER_PHIM:
+            state.keyword = action.keyword;
             return { ...state }
         default:
             return { ...state }

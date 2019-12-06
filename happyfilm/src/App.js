@@ -19,7 +19,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="loader"></div>}>
         <Spring from={{ number: 0 }} to={{ number: 100 }} config={config.slow}>
           {props => (<div style={{ width: props.number + "%" }}>
             <Switch>{showMenuHome(routerHome)}</Switch>
