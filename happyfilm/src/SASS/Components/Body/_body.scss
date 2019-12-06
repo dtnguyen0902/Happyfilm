@@ -1,12 +1,43 @@
 @import "../../Helper/variable";
 body{
-    padding: $pd-0 ;
-    margin: $mg-0;
     background-color: $color-grey;
     color: $color-mint;
     font-size: $fs-1;
+    margin: $mg-0;
+    padding: $pd-0 ;
 }
 p{
     font-size: 12px;
     margin: 0;
 }
+.loader:before, .loader:after {
+    animation: rotate 1.5s  infinite ease-in-out;
+    border-bottom-color: #542437;
+    border-left-color: #53777A;
+    border-radius: 50%;
+    border-right-color: #C02942;
+    border-style: solid;
+    border-top-color: #ECD078;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .loader:before {
+    border-width: 10vh;
+  }
+  .loader:after {
+    animation-direction: reverse;
+    border-width: 2.5vh;
+    height: 30vh;
+    width: 30vh;
+  }
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }

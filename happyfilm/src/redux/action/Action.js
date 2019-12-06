@@ -44,6 +44,7 @@ const layDuLieu = ListFilm => {
         ListFilm
     }
 }
+
 const layThongTinrap = ListRap => {
     return {
         type: ActionType.LAY_DATA_RAP,
@@ -71,6 +72,7 @@ const actOnListMovieAPI = () => {
             })
     }
 }
+
 const actDetailMovieAPI = id => {
     return dispatch => {
         Axios({
@@ -197,5 +199,19 @@ const actDanhSachPhongVe = id => {
             })
     }
 }
-export { actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe }
+const actFilterMovie = keyword => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01&tenPhim=${keyword}`
+        })
+            .then(result => {
+                dispatch(layDuLieu(result.data))
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+export { actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe, actFilterMovie}
 

@@ -113,7 +113,12 @@ ul li a.myBranch:hover{
     color: $color-grey;
     text-decoration: none;
 }
-.bookingVebg,.bookingVebgposition{
+.bookingVebgposition{
+    background-color: $color-grey;
+    border: 1px solid $color-mint;
+    height: 600px;
+}
+.bookingVebg{
     background-color: $color-grey;
     border: 1px solid $color-mint;
 }
@@ -131,4 +136,5 @@ ul li a.myBranch:hover{
 .bookingVe .bookingVeactive:focus{
     outline: none;
 }
+
 
