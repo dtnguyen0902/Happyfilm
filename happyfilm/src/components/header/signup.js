@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import HomePage from './../Pages/HomePage'
 import { connect } from 'react-redux';
 
-
 class Signup extends Component {
     constructor(props) {
         super(props);
@@ -50,7 +49,7 @@ class Signup extends Component {
     }
 
     handleOnChange = (event) => {
-        console.log(event.target);
+        // console.log(event.target);
         let { name, value } = event.target;
         this.setState({
             values: { ...this.state.values, [name]: value }
@@ -71,12 +70,6 @@ class Signup extends Component {
             emailValid,
             diaChiValid,
             checkValid } = this.state;
-
-    handleOnSubmit = (event) => {
-        event.preventDefault();
-        //    this.props.onSubmit(this.state);
-        this.props.signUp(this.state)
-
 
         switch (name) {
             case "taiKhoan":
@@ -173,38 +166,27 @@ class Signup extends Component {
                                         <div className="modal-body">
                                             <div className="form-group">
                                                 <div className="input-group mb-3 w-100">
-
                                                     <input type="text" name="taiKhoan" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Tài Khoản" aria-describedby="basic-addon1" />
                                                 </div>
                                                 <div>
                                                     {this.state.errors.taiKhoan !== "" ? <div className="">{this.state.errors.taiKhoan}</div> : ""}
-                                                    <input type="text" name="taiKhoan" className="form-control" onChange={this.handleOnChange} placeholder="Tài Khoản" autoComplete="username" />
-
                                                 </div>
                                             </div>
                                             <div className="row">
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                         <div className="input-group mb-3 w-100">
-
                                                             <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Mật khẩu" aria-describedby="basic-addon1" />
                                                         </div>
                                                         <div>
                                                             {this.state.errors.matKhau !== "" ? <div className="">{this.state.errors.matKhau}</div> : ""}
-
-                                                            <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} placeholder="Mật khẩu" autoComplete="new=password" />
-
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                         <div className="input-group mb-3 w-100">
-
                                                             <input type="password" name="xacNhanMK" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Xác nhận mật khẩu" aria-describedby="basic-addon1" />
-
-                                                            <input type="password" className="form-control" placeholder="Xác nhận mật khẩu" autoComplete="new=password" />
-
                                                         </div>
                                                         <div>
                                                             {this.state.errors.xacNhanMK !== "" ? <div className="">{this.state.errors.xacNhanMK}</div> : ""}                                                        </div>
