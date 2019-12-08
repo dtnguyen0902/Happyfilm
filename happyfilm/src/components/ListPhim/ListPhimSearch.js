@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PhimItemSearch from './PhimItemSearch';
 
 class ListPhimSearch extends Component {
+
     renderSource = () => {
         let { ListFilms } = this.props;
         return ListFilms.map((item, index) => {
@@ -14,11 +15,16 @@ class ListPhimSearch extends Component {
     }
     componentDidMount() {
         this.props.layDuLieu();
+        window.scrollTo(0, 0)
     }
     render() {
         return (
-            <div className="container px-0">
-                {this.renderSource()}
+            <div className="myCinema container-fluid">
+                <div className='row'>
+                    <div className='col-3 px-0'>
+                        {this.renderSource()}
+                    </div>
+                </div>
             </div>
         );
     }

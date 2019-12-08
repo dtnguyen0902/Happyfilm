@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import ListCarousel from '../Carousel/ListCarousel';
 import ListPhim from '../ListPhim/ListPhim';
-import Sticker from '../IconSticker.js/Sticker';
 import Promotion from '../Promotion/promotion';
-import Header from '../header/header';
-import Navbar from '../Navbar/navbar';
+import AboutHappyFilm from '../About/AboutHappyFilm';
+
 class HomePage extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
-        console.log(this.props)
         return (
             <div>
-                
                 <ListCarousel />
                 <ListPhim />
-                <Sticker />
                 <Promotion />
+                <AboutHappyFilm />
             </div>
         );
     }

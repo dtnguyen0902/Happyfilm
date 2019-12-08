@@ -5,7 +5,6 @@ import Login from "./login";
 import LoginSuccess from './LoginSuccess';
 import _header from "../../SASS/Components/Header/_header.scss"
 import { connect } from "react-redux";
-
 class Header extends Component {
     render() {
         return (

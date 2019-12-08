@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import * as action from '../../../redux/action/Action';
 import { connect } from "react-redux";
-import DetailDate from './Date/DetailDate';
 class OptionNgay extends Component {
 
     renderCinema = () => {
@@ -11,11 +9,7 @@ class OptionNgay extends Component {
                     <Fragment key={index}>
                         {item.cumRapChieu.map((item, index) => {
                             return <Fragment key={index}>
-                                {item.lichChieuPhim.map((item, index) => {
-                                    return <Fragment key={index}>
-                                        <option>{(new Date(item.ngayChieuGioChieu).toLocaleDateString()) }</option>
-                                    </Fragment>
-                                })}
+                                {item.lichChieuPhim.map(item => item['ngayChieuGioChieu'])}
                             </Fragment>
                         })}
                     </Fragment>
@@ -23,18 +17,16 @@ class OptionNgay extends Component {
             })
         }
     }
-    getUnique = (arr,key) => {
-        return [...new Map(arr.map(item => [item[key],item]).value())]
-    }
+
     render() {
-        
+        console.log(this.renderCinema())
         return (
             <Fragment>
                 <div className="form-group">
                     <select className="custom-select" name="" id="selectenPhim">
                         <option selected='Chọn phim'>Chọn ngày</option>
                         <Fragment>
-                        {this.renderCinema()}
+                            {this.renderCinema()}
                         </Fragment>
                     </select>
                 </div>

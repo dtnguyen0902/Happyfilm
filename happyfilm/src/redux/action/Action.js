@@ -12,10 +12,6 @@ const actsingUp = (user) => {
             .then(result => {
                 console.log(result.data);
                 alert('dang ky thanh cong')
-                // Chỗ này sai nha, sau khi dk xong 
-                // anh phải gọi 1 action nhận kết quả đúng
-                // trả về reducer 
-                // dispatch(actsingUp(user));
             })
             .catch(error => {
                 console.log(error);
@@ -31,18 +27,14 @@ const actLogin = (user) => {
             data: user
         })
             .then(result => {
-                console.log(result.data);
                 dispatch({
                     type: ActionType.CLIENT_LOGIN,
                     user: result.data
                 })
                 localStorage.setItem('accessToken', result.data.accessToken);
-                alert("Dang Nhap Thanh Cong")
-
             })
             .catch(error => {
                 console.log(error);
-                alert("Vui long Nhap Lai")
             })
     }
 }
@@ -52,6 +44,7 @@ const layDuLieu = ListFilm => {
         ListFilm
     }
 }
+
 const layThongTinrap = ListRap => {
     return {
         type: ActionType.LAY_DATA_RAP,
@@ -79,6 +72,7 @@ const actOnListMovieAPI = () => {
             })
     }
 }
+
 const actDetailMovieAPI = id => {
     return dispatch => {
         Axios({
@@ -86,11 +80,10 @@ const actDetailMovieAPI = id => {
             url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`
         })
             .then(result => {
-                console.log(result.data)
                 dispatch({
                     type: ActionType.LAY_CHI_TIET_PHIM,
                     movie: result.data
-                })
+                }, 1000)
             })
             .catch(err => {
                 console.log(err)
@@ -137,15 +130,15 @@ const actLichChieuPhimAPI = (id) => {
             method: "GET",
             url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`
         })
-        .then(result => {
-            dispatch({
-                type: ActionType.LAY_LICH_CHIEU_PHIM,
-                CinemaMovie: result.data
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_LICH_CHIEU_PHIM,
+                    CinemaMovie: result.data
+                })
             })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .catch(err => {
+                console.log(err)
+            })
     )
 }
 const actListRapHeThongAPI = id => {
@@ -165,4 +158,60 @@ const actListRapHeThongAPI = id => {
             })
     }
 }
-export { layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp,actLichChieuPhimAPI }
+const actdatVePhimAPI = thongTinDatVe => {
+    return dispatch => {
+        Axios({
+            method: 'POST',
+            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe',
+            data: thongTinDatVe,
+            headers: {
+                'Authorization': 'Bearer' + localStorage.getItem('accessToken')
+            }
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.DAT_VE_PHIM,
+                    danhSachGhe: result.data
+                })
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+
+// lấy danh sách phòng vé
+const actDanhSachPhongVe = id => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${id}`
+        })
+            .then(result => {
+                dispatch({
+                    type: ActionType.LAY_DS_PHONG_VE,
+                    dSachLichChieu: result.data
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+const actFilterMovie = keyword => {
+    return dispatch => {
+        Axios({
+            method: "GET",
+            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01&tenPhim=${keyword}`
+        })
+            .then(result => {
+                dispatch(layDuLieu(result.data))
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+}
+export { actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe, actFilterMovie}
+
