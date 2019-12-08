@@ -23,8 +23,8 @@ class Search extends Component {
         console.log(this.props)
         e.preventDefault();
     }
-    renderSource = () => {
 
+    renderSource = () => {
         return this.props.ListFilms.map((item, index) => {
             return <NavLink to={`/lich-chieu-theo-phim/${item.maPhim}`}>
                 <li key={index} style={{ display: this.state.isCheck ? "none" : "contents", color: "black" }} className='LiSearch'>
@@ -62,7 +62,6 @@ class Search extends Component {
                 <ul className='UlSearch'>
                     {this.renderSource()}
                 </ul>
-
             </Fragment>
         )
     }

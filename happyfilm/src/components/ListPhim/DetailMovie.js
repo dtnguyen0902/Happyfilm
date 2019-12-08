@@ -4,11 +4,8 @@ import { connect } from 'react-redux';
 import { Trail } from 'react-spring/renderprops'
 import { Spring,config } from 'react-spring/renderprops';
 
-
 class DetailMovie extends Component {
-    state = {
-        loading: false
-    }
+    
     componentDidMount() {
         let id = this.props.match.params.id;
         setTimeout(this.props.detailMovie(id), 1000)
