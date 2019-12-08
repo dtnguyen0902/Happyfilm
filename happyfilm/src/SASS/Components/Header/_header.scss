@@ -7,8 +7,43 @@
     width: 60px;
 }
 .happyfilm {
+    color: $color-mint;
     font-family: 'Playball', cursive;
     font-size: $fs-5;
     letter-spacing: 4px;
+}
+.LiSearch {
+    position: absolute;
+    z-index: 999;
+    display: contents;
+    width: 300px;
+}
+.UlSearch{
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+}
+ul.UlSearch{
+    background: none;
+}
+.SearchCard{
+    height: 110px;
+    background: $color-grey;
     color: $color-mint;
+    border: none;
+    margin-bottom: 2px ;
+}
+.ImgSearch{
+    height: 110px;
+    padding: 0;
+}
+.myPhim_moTaSearch{
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+}
+ul li a{
+    padding: 0;
 }

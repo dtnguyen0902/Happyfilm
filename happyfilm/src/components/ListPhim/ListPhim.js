@@ -8,11 +8,9 @@ import { connect } from "react-redux";
 class ListPhim extends Component {
 
     renderSource = () => {
-        let { ListFilms } = this.props;
-        return ListFilms.map((item, index) => {
+        return this.props.ListFilms.map((item, index) => {
             if (index < 8) {
-                return (
-                    <PhimItems key={index} movie={item} />
+                return ( <PhimItems key={index} movie={item} />
                 )
             }
         })

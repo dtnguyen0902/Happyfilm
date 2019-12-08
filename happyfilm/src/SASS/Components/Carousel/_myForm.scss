@@ -1,45 +1,38 @@
 @import "../../Helper/variable";
 .myForm{
-    position: absolute;
-    top: 20%;
-    right: 10%;
     background-color: rgba(31, 40, 51,0.4);
     padding: 20px;
     padding-bottom: 60px;
+    position: absolute;
+    right: 10%;
+    top: 20%;
     width: 25%;
 }
 .myButton__muaVe{
+    background-color: $color-grey;
+    border-color: $color-mint;
+    color: $color-mint;
+    font-size: $fs-1;
+    margin: 0 $mg-05;
+    outline: none;
+    padding: $pd-1;
     position: absolute;
     right: 20px;
-    background-color: $color-grey;
-    color: $color-mint;
-    outline: none;
-    border-color: $color-mint;
-    margin: 0 $mg-05;
-    padding: $pd-1;
-    font-size: $fs-1;
     &:hover{
         background-color: $color-mint;
-        color: $color-grey;
         border-color: $color-mint;
+        color: $color-grey;
     }
 }
 .myButton__xemThem{
     background-color: $color-grey;
-    outline: none;
     border-color: $color-mint;
     margin: 0 $mg-05;
+    outline: none;
     padding: $pd-1;
     &:hover{
         background-color: $color-mint;
-        color: $color-grey;
         border-color: $color-mint;
+        color: $color-grey;
     }
-}
-option{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;  
 }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 import ListBranch from '../Branch-cinema/ListBranch';
@@ -8,18 +8,19 @@ class LichChieuCinema extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
             this.props.detailCinema(nextProps.match.params.id)
+            window.scrollTo(0, 0)
         }
     }
     componentDidMount() {
         let id = this.props.match.params.id;
         this.props.detailCinema(id);
-        console.log(this.props.history)
+        window.scrollTo(0, 0)
     }
     renderCinema = () => {
         return this.props.Cinema.map((item, index) => {
             return (
                 <div key={index}>
-                    <Fragment className="card bg-dark container">
+                    <div className="card bg-dark container">
                         {item.lstCumRap.map((item, index) => {
                             return (
                                 <div key={index}>
@@ -39,7 +40,7 @@ class LichChieuCinema extends Component {
                                                             {item.lstLichChieuTheoPhim.map((item, index) => {
                                                                 return (
                                                                     <div className="card bg-dark" style={{ width: '8' }} key={index}>
-                                                                        <NavLink className="card-body px-2 py-2 bookVe" to={`/dat-ve/${item.maLichChieu}`}>
+                                                                        <NavLink className="card-body px-2 py-2 bookVe" to={`/danh-sach-cho-ngoi/${item.maLichChieu}`}>
                                                                             <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleDateString('en-GB')}</p>
                                                                             <p className="card-title">{new Date(item.ngayChieuGioChieu).toLocaleTimeString()}</p>
                                                                         </NavLink>
@@ -56,7 +57,7 @@ class LichChieuCinema extends Component {
                                 </div>
                             )
                         })}
-                    </Fragment>
+                    </div>
                 </div>
             )
         })

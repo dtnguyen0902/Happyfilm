@@ -3,6 +3,9 @@ import _BranchLogo from '../../SASS/Components/Branch/_BranchLogo.scss';
 import { NavLink } from "react-router-dom";
 import 'react-tabs/style/react-tabs.css';
 class BranchLogo extends Component {
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
     render() {
         let { branch } = this.props;
         return (
