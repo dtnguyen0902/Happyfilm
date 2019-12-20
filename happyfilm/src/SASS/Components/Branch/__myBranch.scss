@@ -107,7 +107,9 @@ ul li a.myBranch:hover{
 .bookingVe .bookingVeactive{
     background-color: $color-mint;
     color: $color-grey;
+    outline: none;
 }
+
 .bookingVeactive:hover{
     background-color: $color-mint;
     color: $color-grey;
@@ -127,7 +129,7 @@ ul li a.myBranch:hover{
     margin-left: 80px;
     padding-right: 0;
     position: fixed;
-    z-index: 999;
+    z-index: 1;
 }
 .bookingVe .bookingVedis{
     background-color: $color-grey;

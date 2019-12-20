@@ -13,24 +13,25 @@
     letter-spacing: 4px;
 }
 .LiSearch {
-    position: absolute;
-    z-index: 999;
     display: contents;
+    position: absolute;
     width: 300px;
+    z-index: 999;
 }
 .UlSearch{
     position: absolute;
     top: 40px;
+    width: 300px;
     z-index: 1;
 }
 ul.UlSearch{
     background: none;
 }
 .SearchCard{
-    height: 110px;
     background: $color-grey;
-    color: $color-mint;
     border: none;
+    color: $color-mint;
+    height: 110px;
     margin-bottom: 2px ;
 }
 .ImgSearch{
@@ -46,4 +47,11 @@ ul.UlSearch{
 }
 ul li a{
     padding: 0;
+}
+.ValidationErr{
+    color: $color-mint;
+    display: contents;
+    font-size: 10px;
+    margin: 10px;
+    padding: 10px;
 }
