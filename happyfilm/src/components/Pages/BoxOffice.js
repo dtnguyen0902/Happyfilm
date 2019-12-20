@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 import Skeleton from 'react-loading-skeleton';
+
+
 class BoxOffice extends Component {
     constructor(props) {
         super(props);
         this.state = ({
-            isBoxOffice: false
+            isBoxOffice: false,
+            total: 0
         })
     }
     componentDidMount() {
@@ -17,8 +20,9 @@ class BoxOffice extends Component {
     //sự kiện chọn chỗ ngồi
     handleSelectBoxOffice = (e) => {
         e.preventDefault();
-        console.log(e.target.value)
-
+        this.setState({
+            total: + e.target.value
+        })
     }
     renderSource = () => {
         if (this.props.dSachLichChieu.danhSachGhe) {
@@ -58,7 +62,8 @@ class BoxOffice extends Component {
                         <p>Địa chỉ: {dSachLichChieu.thongTinPhim.diaChi || <Skeleton />}</p>
                         <h6>Ngày chiếu: {new Date(dSachLichChieu.thongTinPhim.ngayChieu).toLocaleDateString('en-GB') || <Skeleton />}</h6>
                         <h6>Giờ chiếu: {(dSachLichChieu.thongTinPhim.gioChieu) || <Skeleton />}</h6>
-                        <h2>Tổng: {}</h2>
+                        <h2>Tổng: {dSachLichChieu.danhSachGhe.reduce((total, item) => total += item.giaVe, 0)}
+                        </h2>
                     </div>
                 </div>
             )
@@ -70,7 +75,7 @@ class BoxOffice extends Component {
             <div className='container my-4'>
                 <div className='row'>
                     <div className='col-8 row'>
-                            {this.renderSource() || <Skeleton />}
+                        {this.renderSource() || <Skeleton />}
                     </div>
                     <div className='col-4 pr-0'>
                         {this.renderItem() || <Skeleton count={20} />}

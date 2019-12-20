@@ -25,7 +25,7 @@ ul li a{
     padding: 20px;
     text-decoration: none;
 }
-ul li a:hover{
+ul li a.myNav__link:hover{
     color: $color-grey;
     width: 100%;
 }

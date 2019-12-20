@@ -20,7 +20,7 @@ class ListPhim extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container" id="PhimArray">
                 <ul className="nav nav-pills mb-3 myBranchForm" id="pills-tab" role="tablist">
                     <li className="nav-item myBranchForm">
                         <a className="nav-link active myBranchForm" id="pills-home-tab" data-toggle="pill" href="#phimDangChieu" role="tab" aria-controls="pills-home" aria-selected="true">PHIM ĐANG CHIẾU</a>
