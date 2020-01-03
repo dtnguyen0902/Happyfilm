@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, Fragment } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Skeleton from 'react-loading-skeleton';
 
 class DetailMovie extends Component {
+
     componentDidMount() {
         let id = this.props.match.params.id;
         this.props.detailMovie(id);
@@ -31,8 +32,14 @@ class DetailMovie extends Component {
     }
     render() {
         let { movie } = this.props;
-        return (
-            <div className='container'>
+        console.log(this.props)
+        let data;
+        if (this.props.loading !== 200) {
+            data = <div class="loader__wrap">
+                <div className='loader'></div>
+            </div>
+        } else {
+            data = <div className='container'>
                 <div className='row'>
                     <div className='col-8'>
                         <div className='row'>
@@ -73,7 +80,13 @@ class DetailMovie extends Component {
                     </div>
                 </div>
             </div>
+        }
+        return (
+            <Fragment>{data}
+            </Fragment>
+
         );
+
     }
 }
 const mapDispatchToProps = dispatch => {
@@ -85,7 +98,8 @@ const mapDispatchToProps = dispatch => {
 }
 const mapStateToProps = state => {
     return {
-        movie: state.movieReducer.movie
+        movie: state.movieReducer.movie,
+        loading: state.movieReducer.loading
     }
 }
 

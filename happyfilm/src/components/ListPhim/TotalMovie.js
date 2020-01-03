@@ -13,6 +13,9 @@ class TotalMovie extends Component {
         })
     }
     componentDidMount() {
+        setTimeout(function(){
+            window.scrollTo(0,0);
+        },3)
         this.props.layDuLieu();
     }
     render() {
