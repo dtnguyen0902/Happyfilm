@@ -5,6 +5,8 @@ import Login from "./login";
 import LoginSuccess from './LoginSuccess';
 import _header from "../../SASS/Components/Header/_header.scss"
 import { connect } from "react-redux";
+import Clock from './clock';
+
 class Header extends Component {
     render() {
         return (
@@ -17,6 +19,9 @@ class Header extends Component {
                                 <>
                                     <Login history={this.props.history} />
                                     <Signup />
+                                    <div>
+                                        <h2 className='myButton'><Clock /></h2>
+                                    </div>
                                 </>
                             ) : (
                                     <LoginSuccess user={this.props.user} />
