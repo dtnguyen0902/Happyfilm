@@ -9,7 +9,7 @@ class BoxOffice extends Component {
         super(props);
         this.state = ({
             isBoxOffice: false,
-            total: 0
+            total: 0,
         })
     }
     componentDidMount() {
@@ -20,18 +20,17 @@ class BoxOffice extends Component {
     //sự kiện chọn chỗ ngồi
     handleSelectBoxOffice = (e) => {
         e.preventDefault();
-        this.setState({
-            total: + e.target.value
-        })
+        let arr = [];
+        console.log(e.target)
     }
     renderSource = () => {
         if (this.props.dSachLichChieu.danhSachGhe) {
             return this.props.dSachLichChieu.danhSachGhe.map((item, index) => {
                 if (item.daDat) {
                     return (
-                        <div className="card bookingVebg" style={{ width: '6rem' }} key={index}>
+                        <div className="card bookingVebg" style={{ width: '6rem' }} key={index} onClick={this.handleSelectBoxOffice}>
                             <div className="list-group list-group-flush bookingVe ">
-                                <button className="bookingVedis list-group-item" onClick={this.handleSelectBoxOffice}>{item.tenGhe || <Skeleton />}</button>
+                                <button className="bookingVedis list-group-item">{item.tenGhe}</button>
                             </div>
                         </div>
                     )
@@ -40,7 +39,7 @@ class BoxOffice extends Component {
                     return (
                         <div className="card bookingVebg " style={{ width: '6rem' }} key={index}>
                             <div className="list-group list-group-flush bookingVe ">
-                                <button className="list-group-item bookingVeactive" onClick={this.handleSelectBoxOffice}>{item.tenGhe || <Skeleton />}</button>
+                                <button className="list-group-item bookingVeactive" onClick={this.handleSelectBoxOffice} value={item.giaVe}>{item.tenGhe}</button>
                             </div>
                         </div>
                     )
@@ -54,14 +53,14 @@ class BoxOffice extends Component {
         let { dSachLichChieu } = this.props;
         if (dSachLichChieu.thongTinPhim) {
             return (
-                <div className="card bookingVebgposition" style={{ width: '18rem' } || <Skeleton count={7} />}>
+                <div className="card bookingVebgposition" style={{ width: '18rem' }}>
                     <img src={dSachLichChieu.thongTinPhim.hinhAnh} className="card-img-top" alt="..." height={320} />
                     <div className="card-body">
-                        <h4 className="card-title">{dSachLichChieu.thongTinPhim.tenPhim || <Skeleton />}</h4>
-                        <h6 className="card-text">Rạp: {dSachLichChieu.thongTinPhim.tenCumRap || <Skeleton />} | {dSachLichChieu.thongTinPhim.tenRap || <Skeleton />}</h6>
+                        <h4 className="card-title">{dSachLichChieu.thongTinPhim.tenPhim}</h4>
+                        <h6 className="card-text">Rạp: {dSachLichChieu.thongTinPhim.tenCumRap} | {dSachLichChieu.thongTinPhim.tenRap}</h6>
                         <p>Địa chỉ: {dSachLichChieu.thongTinPhim.diaChi || <Skeleton />}</p>
-                        <h6>Ngày chiếu: {new Date(dSachLichChieu.thongTinPhim.ngayChieu).toLocaleDateString('en-GB') || <Skeleton />}</h6>
-                        <h6>Giờ chiếu: {(dSachLichChieu.thongTinPhim.gioChieu) || <Skeleton />}</h6>
+                        <h6>Ngày chiếu: {new Date(dSachLichChieu.thongTinPhim.ngayChieu).toLocaleDateString('en-GB')}</h6>
+                        <h6>Giờ chiếu: {(dSachLichChieu.thongTinPhim.gioChieu)}</h6>
                         <h2>Tổng: {dSachLichChieu.danhSachGhe.reduce((total, item) => total += item.giaVe, 0)}
                         </h2>
                     </div>
@@ -71,18 +70,25 @@ class BoxOffice extends Component {
     }
 
     render() {
-        return (
-            <div className='container my-4'>
-                <div className='row'>
-                    <div className='col-8 row'>
-                        {this.renderSource() || <Skeleton />}
-                    </div>
-                    <div className='col-4 pr-0'>
-                        {this.renderItem() || <Skeleton count={20} />}
+        if (this.props.loading !== 200) {
+            return <div class="loader__wrap">
+                <div className='loader'></div>
+            </div>
+        } else {
+            return (
+                <div className='container my-4'>
+                    <div className='row'>
+                        <div className='col-8 row'>
+                            {this.renderSource()}
+                        </div>
+                        <div className='col-4 pr-0'>
+                            {this.renderItem()}
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
+
     }
 }
 const mapDispatchToProps = disapatch => {
@@ -94,7 +100,8 @@ const mapDispatchToProps = disapatch => {
 }
 const mapStateToProps = state => {
     return {
-        dSachLichChieu: state.lichChieuReducer.dSachLichChieu
+        dSachLichChieu: state.lichChieuReducer.dSachLichChieu,
+        loading: state.lichChieuReducer.loading
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(BoxOffice);

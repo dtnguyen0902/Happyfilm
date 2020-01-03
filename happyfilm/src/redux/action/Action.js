@@ -1,3 +1,4 @@
+import React from 'react';
 import * as ActionType from './../constants/ActionType';
 import Axios from 'axios';
 
@@ -82,8 +83,9 @@ const actDetailMovieAPI = id => {
             .then(result => {
                 dispatch({
                     type: ActionType.LAY_CHI_TIET_PHIM,
-                    movie: result.data
-                }, 1000)
+                    movie: result.data,
+                    loading: result.status
+                })
             })
             .catch(err => {
                 console.log(err)
@@ -191,7 +193,8 @@ const actDanhSachPhongVe = id => {
             .then(result => {
                 dispatch({
                     type: ActionType.LAY_DS_PHONG_VE,
-                    dSachLichChieu: result.data
+                    dSachLichChieu: result.data,
+                    loading: result.status
                 })
             })
             .catch(err => {
@@ -213,5 +216,5 @@ const actFilterMovie = keyword => {
             })
     }
 }
-export { actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe, actFilterMovie}
+export { actdatVePhimAPI, layDuLieu, layThongTinrap, actOnListMovieAPI, actListRapAPI, actDetailMovieAPI, actListRapHeThongAPI, actLichChieuRapAPI, layThongTinLichChieu, actLogin, actsingUp, actLichChieuPhimAPI, actDanhSachPhongVe, actFilterMovie }
 

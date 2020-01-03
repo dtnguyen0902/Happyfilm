@@ -2,7 +2,8 @@ import * as ActionType from '../constants/ActionType';
 
 let initState = {
     ListFilms: [],
-    movie: {}
+    movie: {},
+    loading: true
 
 }
 const movieReducer = (state = initState, action) => {
@@ -12,6 +13,7 @@ const movieReducer = (state = initState, action) => {
             return { ...state }
         case ActionType.LAY_CHI_TIET_PHIM:
             state.movie = action.movie;
+            state.loading = action.loading;
             return { ...state }
 
         case ActionType.FILTER_PHIM:

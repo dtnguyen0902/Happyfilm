@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import ListCarousel from '../Carousel/ListCarousel';
 import ListPhim from '../ListPhim/ListPhim';
 import Promotion from '../Promotion/promotion';
@@ -10,12 +10,12 @@ class HomePage extends Component {
     }
     render() {
         return (
-            <div>
+            <Fragment>
                 <ListCarousel />
                 <ListPhim />
                 <Promotion />
                 <AboutHappyFilm />
-            </div>
+            </Fragment>
         );
     }
 }
