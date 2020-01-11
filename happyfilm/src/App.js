@@ -4,7 +4,7 @@ import _body from "./SASS/Components/Body/_body.scss";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { routerHome } from './router'
 import HomeTemplate from './components/Templates/HomeTemplate';
-import AdminTemplate from './components/Templates/'
+
 import { Spring, config } from 'react-spring/renderprops'
 import {VerticleButton as ScrollUpButton} from 'react-scroll-up-button';
 
