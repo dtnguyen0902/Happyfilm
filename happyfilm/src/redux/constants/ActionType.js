@@ -22,3 +22,12 @@ export const LAY_LICH_CHIEU_PHIM = "GET_DATA_LICHCHIEU_PHIM";
 export const LAY_DS_PHONG_VE = 'GET_lIST_BOOKING';
 // tìm kiếm phim
 export const FILTER_PHIM = "SEARCH_FILM";
+export const ADD_USER="ADD_USER";
+export const VALIDATION_ADMIN="VALIDATION_ADMIN";
+export const MEMBER_LIST="MEMBER_LIST";
+export const EDIT_USER="EDIT_USER";
+export const DELETE_USER="DELETE_USER";
+export const KEY_SEARCH="KEY_SEARCH";
+export const ADD_FILM="ADD_FILM";
+export const DELETE_FILM="DELETE_FILM";
+export const EDIT_FILM="EDIT_FILM";

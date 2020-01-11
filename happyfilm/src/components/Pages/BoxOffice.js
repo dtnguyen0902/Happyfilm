@@ -6,7 +6,10 @@ class BoxOffice extends Component {
     constructor(props) {
         super(props);
         this.state = ({
-            isBoxOffice: false
+            isBoxOffice: false,
+            dsGhe: [],
+            dsGheDangDat: [],
+            tongTien: 0
         })
     }
     componentDidMount() {
@@ -15,50 +18,86 @@ class BoxOffice extends Component {
         window.scrollTo(0, 0)
     }
     //sự kiện chọn chỗ ngồi
-    handleSelectBoxOffice = (e) => {
+    handleSelectBoxOffice = (e, item) => {
         e.preventDefault();
-        console.log(e.target.value)
+        let { dsGhe, dsGheDangDat } = this.state;
+        console.log(e.target.value);
+        console.log('ghe =', item);
+        // dò tìm trong mảng ban đầu, set lại trạng thái 
+        let index = dsGhe.findIndex(x => x.maGhe === item.maGhe);
+        if (index !== -1) {
+            dsGhe[index].daDat = !dsGhe[index].daDat;
+            if (dsGhe[index].daDat) {
+                dsGheDangDat.push(dsGhe[index]);
+        
+            } else {
+                let findGheCanXoa = dsGheDangDat.findIndex(y => y.maGhe === dsGhe[index].maGhe);
+                findGheCanXoa !== -1 && dsGheDangDat.splice(findGheCanXoa, 1);
+                
+
+            }
+        }
+
+
+        this.setState({
+            ...dsGhe,
+            dsGheDangDat,
+            tongTien: this.TongTien()
+        })
 
     }
+    // Tính tổng
+     TongTien() {
+        let sum=0;
+        for(let i=0;i<this.state.dsGheDangDat.length;i++){
+            sum+=this.state.dsGheDangDat[i].giaVe;
+        }     
+        return sum;   
+    }
+    componentWillReceiveProps(nextProps) {
+        if (this.props.dSachLichChieu !== nextProps.dSachLichChieu) {
+            this.setState({ dsGhe: nextProps.dSachLichChieu.danhSachGhe })
+        }
+    }
     renderSource = () => {
-        if (this.props.dSachLichChieu.danhSachGhe) {
-            return this.props.dSachLichChieu.danhSachGhe.map((item, index) => {
-                if (item.daDat) {
-                    return (
-                        <div className="card bookingVebg" style={{ width: '6rem' }} key={index}>
-                            <div className="list-group list-group-flush bookingVe ">
-                                <button className="bookingVedis list-group-item" onClick={this.handleSelectBoxOffice}>{item.tenGhe || <Skeleton />}</button>
-                            </div>
+        if (this.state.dsGhe.length > 0) {
+            
+
+            return this.state.dsGhe.map((item, index) => {
+                return (
+                    <div className="card bookingVebg " style={{ width: '6rem' }} key={index}>
+                        <div className="list-group list-group-flush bookingVe ">
+                            <button className={item.daDat === true ? 'btn btn-danger' : 'list-group-item bookingVeactive'
+                            } onClick={(e) => this.handleSelectBoxOffice(e, item)}>{item.tenGhe || <Skeleton />}</button>
                         </div>
-                    )
-                }
-                else {
-                    return (
-                        <div className="card bookingVebg " style={{ width: '6rem' }} key={index}>
-                            <div className="list-group list-group-flush bookingVe ">
-                                <button className="list-group-item bookingVeactive" onClick={this.handleSelectBoxOffice}>{item.tenGhe || <Skeleton />}</button>
-                            </div>
-                        </div>
-                    )
-                }
+                    </div>
+                )
             })
         }
-        // }
     }
 
     renderItem = () => {
+      
         let { dSachLichChieu } = this.props;
         if (dSachLichChieu.thongTinPhim) {
             return (
-                <div className="card bookingVebgposition" style={{ width: '18rem' } || <Skeleton count={7} />}>
+                <div className="card bookingVebgposition" style={{ width: '18rem',height:"60%",position:"relative" }}>
                     <img src={dSachLichChieu.thongTinPhim.hinhAnh} className="card-img-top" alt="..." height={320} />
                     <div className="card-body">
                         <h4 className="card-title">{dSachLichChieu.thongTinPhim.tenPhim || <Skeleton />}</h4>
                         <h6 className="card-text">Rạp: {dSachLichChieu.thongTinPhim.tenCumRap || <Skeleton />} | {dSachLichChieu.thongTinPhim.tenRap || <Skeleton />}</h6>
                         <p>Địa chỉ: {dSachLichChieu.thongTinPhim.diaChi || <Skeleton />}</p>
                         <h6>Ngày chiếu: {new Date(dSachLichChieu.thongTinPhim.ngayChieu).toLocaleDateString('en-GB') || <Skeleton />}</h6>
+                        <h6>Danh Sach Ghe dang dat :</h6>
+                        {this.state.dsGheDangDat.map((item, index) => (
+                            <div>
+                                {item.tenGhe + ' = ' + item.giaVe}
+                            </div>
+                        ))}
                         <h6>Giờ chiếu: {(dSachLichChieu.thongTinPhim.gioChieu) || <Skeleton />}</h6>
-                        <h2>Tổng: {}</h2>
+                       
+                        <h2>Tổng:{this.state.tongTien} </h2>
+                        <button type="button" className="btn btn-success text-center" style={{width:"100%"}}>ĐẶT VÉ</button>
                     </div>
                 </div>
             )
@@ -67,16 +106,18 @@ class BoxOffice extends Component {
 
     render() {
         return (
-            <div className='container my-4'>
-                <div className='row'>
-                    <div className='col-8 row'>
+            <>
+                <div className='container my-4'>
+                    <div className='row'>
+                        <div className='col-8 row'>
                             {this.renderSource() || <Skeleton />}
-                    </div>
-                    <div className='col-4 pr-0'>
-                        {this.renderItem() || <Skeleton count={20} />}
+                        </div>
+                        <div className='col-4 pr-0'>
+                            {this.renderItem() || <Skeleton count={20} />}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
 }

@@ -19,9 +19,28 @@ import ListBranch from "./components/Branch-cinema/ListBranch";
 import LichChieuCinemaMovie from "./components/Pages/LichChieuCinemaMovie";
 import TotalMovie from "./components/ListPhim/TotalMovie";
 import BoxOffice from './components/Pages/BoxOffice';
+import dashBoard from './Pages/Admin/dashBoard';
+import quanLyFilm from './Pages/Admin/quanLyFilm';
+import quanlyUser from './Pages/Admin/quanlyUser';
 
 const DetailMovie = React.lazy(() => import('./components/Pages/DetailMovie'));
-
+const routerAdmin=[
+    {
+        path : "/admin/dashboard",
+        exact : false,
+        component: dashBoard,
+    },
+    {
+        path : "/admin/quanly-users",
+        exact : false,
+        component: quanlyUser
+    },
+    {
+        path : "/admin/quanly-films",
+        exact : false,
+        component: quanLyFilm
+    }
+]
 const routerHome = [
     {
         path: "/",
@@ -138,4 +157,4 @@ const routerHome = [
 
 
 
-export { routerHome }
+export { routerHome,routerAdmin }

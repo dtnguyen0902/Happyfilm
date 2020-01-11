@@ -37,9 +37,19 @@ const mapDispatchToProps = dispatch => {
         }
     }
 }
+
 const mapStateToProps = state => {
     return {
         ListRaps: state.ThongTinrapReducer.ListRaps
     }
 }
+
+// const mapStateToProps = (state) => ({
+//     ListRaps:  state.ThongTinrapReducer.ListRaps
+// })
+
+// const mapDispatchToProps = {
+//     layThongTinrap: action.layThongTinrap
+// }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Branch);
