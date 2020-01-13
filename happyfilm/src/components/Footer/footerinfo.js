@@ -45,11 +45,11 @@ class Footerinfo extends Component {
                             <div className="col-3">
                                 <li className="nav-item footer">
                                     <NavLink className="nav-link"  to='face-book'>
-                                        <i class="fa fa-facebook" aria-hidden="true">FACEBOOK</i></NavLink>
+                                        <i className="fa fa-facebook my-3" aria-hidden="true">FACEBOOK</i></NavLink>
                                     <NavLink className="nav-link"  to='goo-gle'>
-                                        <i class="fa fa-google" aria-hidden="true"> GOOGLE</i></NavLink>
+                                        <i className="fa fa-google my-3" aria-hidden="true">GOOGLE</i></NavLink>
                                     <NavLink className="nav-link"  to='insta-gram'>
-                                        <i class="fa fa-instagram" aria-hidden="true">INSTAGRAM</i></NavLink>
+                                        <i className="fa fa-instagram pr-3" aria-hidden="true">INSTAGRAM</i></NavLink>
                                 </li>
                             </div>
                         </div>

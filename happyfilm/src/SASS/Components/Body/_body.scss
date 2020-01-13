@@ -6,6 +6,10 @@ body{
     margin: $mg-0;
     padding: $pd-0 ;
 }
+html{
+  scroll-behavior: smooth;
+  scroll-behavior: none;
+}
 p{
     font-size: 12px;
     margin: 0;

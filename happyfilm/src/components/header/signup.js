@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import *as  action from './../../redux/action/Action';
 import _button from '../../SASS/Function/_button.scss';
-import { NavLink } from 'react-router-dom';
-import HomePage from './../Pages/HomePage'
 import { connect } from 'react-redux';
+import Alert from 'react-bootstrap/Alert';
 
 class Signup extends Component {
+    local
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +15,6 @@ class Signup extends Component {
                 xacNhanMK: "",
                 hoTen: "",
                 soDT: "",
-
                 email: "",
                 diaChi: "",
                 check: "",
@@ -26,7 +25,6 @@ class Signup extends Component {
                 xacNhanMK: "",
                 hoTen: "",
                 soDT: "",
-
                 email: "",
                 diaChi: "",
                 check: "",
@@ -53,14 +51,12 @@ class Signup extends Component {
         let { name, value } = event.target;
         this.setState({
             values: { ...this.state.values, [name]: value }
-        }, () => { console.log(this.state) })
+        }, () => { })
     }
 
     handleErrors = (event) => {
         let { name, value } = event.target;
-
-
-        let message = value === "" ? "*Vui long khong de trong" : "";
+        let message = value === "" ? <Alert variant="danger">(*) Vui lòng không để trống</Alert> : <Alert variant="success">IT'S OKAY</Alert>;
         let {
             taiKhoanValid,
             matKhauValid,
@@ -76,7 +72,7 @@ class Signup extends Component {
                 taiKhoanValid = message !== "" ? false : true;
                 if (value !== "" && value.length < 4) {
                     taiKhoanValid = false;
-                    message = "*Vui long nhap nhieu hon 4 ky tu";
+                    message = <Alert variant="danger">(*) Vui lòng nhập nhiều hơn 4 ký tự</Alert>;
                 }
                 break;
 
@@ -87,7 +83,7 @@ class Signup extends Component {
                 xacNhanMKValid = message !== "" ? false : true;
                 if (value !== this.state.values.matKhau) {
                     xacNhanMKValid = false;
-                    message = "*Xac nhan mat khau chua dung";
+                    message = <Alert variant="danger">(*) Xác nhận mật khẩu chưa đúng</Alert>;
                 } else {
                     xacNhanMKValid = true;
                 }
@@ -104,7 +100,7 @@ class Signup extends Component {
                 emailValid = message !== "" ? false : true;
                 if (value !== "" && !value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
                     emailValid = false;
-                    message = "*Email chua hop le";
+                    message = <Alert variant="danger">(*) Email của bạn chưa hợp lệ</Alert>;
                 }
                 break;
             case "diaChi":
@@ -116,7 +112,7 @@ class Signup extends Component {
                     checkValid = true;
                 } else {
                     checkValid = false;
-                    message = "*Vui long long checkBox"
+                    message = <Alert variant="danger">(*) Mời bạn check vào ô CheckBox</Alert>;
                 }
                 break;
             default:
@@ -141,9 +137,6 @@ class Signup extends Component {
                 this.state.soDTValid && this.state.emailValid && this.state.diaChiValid && this.state.checkValid
         })
     }
-
-
-
     render() {
         return (
             <div>
@@ -165,21 +158,20 @@ class Signup extends Component {
                                     <form onSubmit={this.handleSubmit}>
                                         <div className="modal-body">
                                             <div className="form-group">
-                                                <div className="input-group mb-3 w-100">
+                                                <div className="input-group my-3 w-100">
                                                     <input type="text" name="taiKhoan" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Tài Khoản" aria-describedby="basic-addon1" />
                                                 </div>
-                                                <div>
-                                                    {this.state.errors.taiKhoan !== "" ? <div className="">{this.state.errors.taiKhoan}</div> : ""}
-                                                </div>
+                                                
                                             </div>
+                                            <div className="ValidationErr" style={{ visibility: this.state.errors.taiKhoan !== "" ? "visible" : "hidden" }}>{this.state.errors.taiKhoan}
+                                                </div>
                                             <div className="row">
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                         <div className="input-group mb-3 w-100">
                                                             <input type="password" name="matKhau" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Mật khẩu" aria-describedby="basic-addon1" />
                                                         </div>
-                                                        <div>
-                                                            {this.state.errors.matKhau !== "" ? <div className="">{this.state.errors.matKhau}</div> : ""}
+                                                        <div className="ValidationErr" style={{ visibility: this.state.errors.matKhau !== "" ? "visible" : "collapse" }}>{this.state.errors.matKhau}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -189,7 +181,7 @@ class Signup extends Component {
                                                             <input type="password" name="xacNhanMK" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Xác nhận mật khẩu" aria-describedby="basic-addon1" />
                                                         </div>
                                                         <div>
-                                                            {this.state.errors.xacNhanMK !== "" ? <div className="">{this.state.errors.xacNhanMK}</div> : ""}                                                        </div>
+                                                            {this.state.errors.xacNhanMK !== "" ? <div className="ValidationErr">{this.state.errors.xacNhanMK}</div> : ""}                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -198,8 +190,7 @@ class Signup extends Component {
                                                     <input type="text" name="hoTen" className="form-control" placeholder="Họ tên" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} aria-describedby="basic-addon1" />
                                                 </div>
                                                 <div>
-                                                    {this.state.errors.hoTen !== "" ? <div className="">{this.state.errors.hoTen}</div> : ""}
-
+                                                    {this.state.errors.hoTen !== "" ? <div className="ValidationErr">{this.state.errors.hoTen}</div> : ""}
                                                 </div>
                                             </div>
                                             <div className="row">
@@ -209,9 +200,8 @@ class Signup extends Component {
                                                             <input type="text" name="soDT" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Số điện thoại" aria-describedby="basic-addon1" />
                                                         </div>
                                                         <div>
-                                                            {this.state.errors.soDT !== "" ? <div>{this.state.errors.soDT}</div> : ""}
+                                                            {this.state.errors.soDT !== "" ? <div className="ValidationErr">{this.state.errors.soDT}</div> : ""}
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div className="col-6">
@@ -229,7 +219,7 @@ class Signup extends Component {
                                                     <input type="text" name="email" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Email" aria-describedby="basic-addon1" />
                                                 </div>
                                                 <div>
-                                                    {this.state.errors.email !== "" ? <div className="">{this.state.errors.email}</div> : ""}
+                                                    {this.state.errors.email !== "" ? <div className="ValidationErr">{this.state.errors.email}</div> : ""}
                                                 </div>
                                             </div>
                                             <div className="form-group">
@@ -237,7 +227,7 @@ class Signup extends Component {
                                                     <input type="text" name="diaChi" className="form-control" onChange={this.handleOnChange} onBlur={this.handleErrors} onKeyUp={this.handleErrors} placeholder="Địa chỉ" aria-describedby="basic-addon1" />
                                                 </div>
                                                 <div>
-                                                    {this.state.errors.diaChi !== "" ? <div className="">{this.state.errors.diaChi}</div> : ""}
+                                                    {this.state.errors.diaChi !== "" ? <div className="ValidationErr">{this.state.errors.diaChi}</div> : ""}
                                                 </div>
                                             </div>
                                             <div className="form-group">
@@ -253,11 +243,10 @@ class Signup extends Component {
                                                         Tôi đã đọc và đồng ý CHÍNH SÁCH của chương trình
                                                     </label>
                                                     <div>
-                                                        {this.state.errors.check !== "" ? <div className="">{this.state.errors.check}</div> : ""}
+                                                        {this.state.errors.check !== "" ? <div className="ValidationErr" style="display: block">{this.state.errors.check}</div> : ""}
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div className="modal-footer">
                                             <button type="submit" className="btn btn-warning container" data-toggle="modal" data-target="#Submit" disabled={!this.state.formValid} >ĐĂNG KÝ</button>
@@ -296,9 +285,6 @@ class Signup extends Component {
             </div>
         )
     }
-
-
-
 }
 
 const mapDispatchToProps = dispatch => {

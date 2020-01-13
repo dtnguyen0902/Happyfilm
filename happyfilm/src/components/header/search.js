@@ -13,14 +13,21 @@ class Search extends Component {
         }
     }
     handlerOnChange = (e) => {
-        this.setState({
-            value: e.target.value,
-            isCheck: false
-        })
+        if(e.target.value === ""){
+            this.setState({
+                value: "",
+                isCheck: true
+            })
+        }else{
+            this.setState({
+                value: e.target.value,
+                isCheck: false
+            })
+        }
+        
     }
+
     handlerOnSubmit = (e) => {
-        console.log(this.state.value);
-        console.log(this.props)
         e.preventDefault();
     }
 

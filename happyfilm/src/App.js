@@ -1,12 +1,13 @@
 import React, { Suspense } from 'react';
 import './App.scss';
 import _body from "./SASS/Components/Body/_body.scss";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { routerHome } from './router'
 import HomeTemplate from './components/Templates/HomeTemplate';
 
 import { Spring, config } from 'react-spring/renderprops'
-import {VerticleButton as ScrollUpButton} from 'react-scroll-up-button';
+import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
+import { positions, Provider } from "react-alert";
 
 function App() {
   const showMenuHome = routers => {
@@ -18,24 +19,31 @@ function App() {
       })
     }
   }
+<<<<<<< HEAD
   const showAdminHome=routers=>{
     if(routers && routers.length>0){
       return routers.map((item,index)=>{
         return 
       })
     }
+=======
+  const options = {
+    timeout: 2000,
+    positions: positions.BOTTOM_CENTER
+>>>>>>> master
   }
   return (
     <BrowserRouter>
-      <Suspense fallback={<div className="loader"></div>}>
-        <Spring from={{ number: 0 }} to={{ number: 100 }} config={config.slow}>
-          {props => (<div style={{ width: props.number + "%" }}>
-            <Switch>{showMenuHome(routerHome)}</Switch>
-            <ScrollUpButton />
-          </div>)}
-        </Spring>
-
-      </Suspense>
+      <Provider  {...options}>
+        <Suspense fallback={<div className="loader"></div>}>
+          <Spring from={{ number: 0 }} to={{ number: 100 }} config={config.slow}>
+            {props => (<div style={{ width: props.number + "%" }}>
+              <Switch>{showMenuHome(routerHome)}</Switch>
+              <ScrollUpButton />
+            </div>)}
+          </Spring>
+        </Suspense>
+      </Provider>
     </BrowserRouter>
   );
 }

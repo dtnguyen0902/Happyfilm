@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import * as action from '../../redux/action/Action';
 import { connect } from "react-redux";
 import Skeleton from 'react-loading-skeleton';
+
+
 class BoxOffice extends Component {
     constructor(props) {
         super(props);
         this.state = ({
             isBoxOffice: false,
+<<<<<<< HEAD
             dsGhe: [],
             dsGheDangDat: [],
             tongTien: 0
+=======
+            total: 0
+>>>>>>> master
         })
     }
     componentDidMount() {
@@ -20,6 +26,7 @@ class BoxOffice extends Component {
     //sự kiện chọn chỗ ngồi
     handleSelectBoxOffice = (e, item) => {
         e.preventDefault();
+<<<<<<< HEAD
         let { dsGhe, dsGheDangDat } = this.state;
         console.log(e.target.value);
         console.log('ghe =', item);
@@ -45,6 +52,11 @@ class BoxOffice extends Component {
             tongTien: this.TongTien()
         })
 
+=======
+        this.setState({
+            total: + e.target.value
+        })
+>>>>>>> master
     }
     // Tính tổng
      TongTien() {
@@ -95,9 +107,14 @@ class BoxOffice extends Component {
                             </div>
                         ))}
                         <h6>Giờ chiếu: {(dSachLichChieu.thongTinPhim.gioChieu) || <Skeleton />}</h6>
+<<<<<<< HEAD
                        
                         <h2>Tổng:{this.state.tongTien} </h2>
                         <button type="button" className="btn btn-success text-center" style={{width:"100%"}}>ĐẶT VÉ</button>
+=======
+                        <h2>Tổng: {dSachLichChieu.danhSachGhe.reduce((total, item) => total += item.giaVe, 0)}
+                        </h2>
+>>>>>>> master
                     </div>
                 </div>
             )
@@ -106,6 +123,7 @@ class BoxOffice extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
             <>
                 <div className='container my-4'>
                     <div className='row'>
@@ -115,6 +133,15 @@ class BoxOffice extends Component {
                         <div className='col-4 pr-0'>
                             {this.renderItem() || <Skeleton count={20} />}
                         </div>
+=======
+            <div className='container my-4'>
+                <div className='row'>
+                    <div className='col-8 row'>
+                        {this.renderSource() || <Skeleton />}
+                    </div>
+                    <div className='col-4 pr-0'>
+                        {this.renderItem() || <Skeleton count={20} />}
+>>>>>>> master
                     </div>
                 </div>
             </>

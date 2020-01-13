@@ -4,18 +4,17 @@ import promotion2 from '../../img/promotion2.jpg';
 import promotion3 from '../../img/promotion3.jpg';
 import promotion4 from '../../img/promotion4.jpg';
 import _promotion from '../../SASS/Components/Promotion/_promotion.scss';
-import bgpromotion from '../../img/Untitled-2.png';
+
 class Promotion extends Component {
     render() {
         return (
-            <div className="container">
-                <div className='row align-middle'>
+            <div className="container" id="Promotion">
+                <div className='container row'>
                     <ul className="nav nav-pills  myPromotion" id="pills-tab" role="tablist">
                         <li className="nav-item myPromotion">
                             <a className="nav-link active myPromotion" id="pills-home-tab" data-toggle="pill" role="tab">TIN KHUYẾN MÃI</a>
                         </li>
                     </ul>
-                    
                 </div>
                 <div className='row'>
                     <div className='items-overlay'>
